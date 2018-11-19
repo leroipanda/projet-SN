@@ -18,7 +18,7 @@ package body Liste_Generique is
         liste.all.suivant := Nouveau_Element;
     end Ajouter_Element;
 
-    procedure Supprimer_premier_Elemenent(liste : in out T_Liste) is
+    procedure Supprimer_premier_Element(liste : in out T_Liste) is
         Element_Supprimer : T_Liste := T_Liste
     begin
         if T_Liste = Null then
@@ -29,7 +29,14 @@ package body Liste_Generique is
         end if;
 
 
-        end Supprimer_premier_Elemenent;
+        end Supprimer_premier_Element;
+
+
+        function Est_Vide(liste : in T_Liste)is
+        begin
+            return T_liste = Null;
+        end Est_Vide;
+
 
 
 

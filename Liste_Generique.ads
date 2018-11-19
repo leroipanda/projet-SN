@@ -13,7 +13,9 @@ package Liste_Generique is
     --procédure qui ajoute un élement à la liste chainé
     procedure Ajouter_Element(liste: in out T_Liste,elemment : in T_Type) ;
     --procedure qui supprime le premiere element de la liste chainée
-    procedure Supprimer_premier_Elemenent(liste : in out T_Liste);
+    procedure Supprimer_premier_Element(liste : in out T_Liste);
+    --fonction qui regarde si la liste est vide
+    function Est_Vide(liste : in T_Liste);
 
 
 
