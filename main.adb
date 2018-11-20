@@ -32,8 +32,8 @@ begin
    colone := 0;
    loop  
       caractere_lu_prec := caractere_lu ;
-            --Get(MonFichier,caractere_lu);
-            Put(caractere_lu);
+            Get(MonFichier,caractere_lu);
+            --Put(caractere_lu);
       colone := colone+1;
       Ajouter_Element(liste,caractere_lu); --ordre de la liste import peu 
       
@@ -50,10 +50,12 @@ begin
       exit when End_Of_File(MonFichier);
    end loop;
    
-   
-      put(Element_Debut(liste));
-   Supprimer_premier_Element(liste);
+   for i in 1..20 loop
+      
    put(Element_Debut(liste));
+   Supprimer_premier_Element(liste);
+   
+      end loop;
       
      
    
