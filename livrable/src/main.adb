@@ -53,12 +53,7 @@ begin
       exit when End_Of_File(MonFichier);
    end loop;
    
-   for i in 1..20 loop
-      
-      put(Element_Debut(liste));
-      Supprimer_premier_Element(liste);
-   
-   end loop;
+--liste contient les caractère du fichier
       
      
    
