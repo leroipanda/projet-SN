@@ -12,29 +12,32 @@ package body Liste_Generique is
         liste := Null;
     end Initialiser;
 
-    procedure Ajouter_Element(liste: in out T_Liste,elemment : in T_Type) is
-        Nouveau_Element := new T_Liste'(element,Null,liste);
-    begin
-        liste.all.suivant := Nouveau_Element;
+   procedure Ajouter_Element(liste: in out T_Liste;elemment : in T_Type) is
+        nouvelle_cellule : T_Cellule := (elemment,null,liste);
+        P_cellule : T_Liste;
+   begin
+
+       P_cellule.all := nouvelle_cellule;
+        liste.all.suivant := P_cellule;
     end Ajouter_Element;
 
     procedure Supprimer_premier_Element(liste : in out T_Liste) is
-        Element_Supprimer : T_Liste := T_Liste
+        Element_Supprimer : T_Liste := liste;
     begin
-        if T_Liste = Null then
-            raise(EXEPTION_LISTE_VIDE);
+        if liste = Null then
+            raise EXCEPTION_LISTE_VIDE;
         else
-                T_Liste := T_Liste.all.suivant;
-                Free(Element_Supprimer.all,Element_Supprimer);
+                liste := liste.all.suivant;
+                Free(Element_Supprimer);
         end if;
 
 
         end Supprimer_premier_Element;
 
 
-        function Est_Vide(liste : in T_Liste)is
+        function Est_Vide(liste : in T_Liste) return Boolean is
         begin
-            return T_liste = Null;
+            return liste = Null;
         end Est_Vide;
 
 

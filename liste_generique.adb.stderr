@@ -1,0 +1,1 @@
+liste_generique.adb:17:09: warning: variable "P_cellule" is read but never assigned
