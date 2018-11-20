@@ -4,7 +4,7 @@ project Default is
       for Switches ("ada") use ("-g", "-O2");
    end Compiler;
 
-   for Main use ("exemple_liste_generique") & project'Main;
+   for Main use ("main", "exemple_liste_generique") & project'Main;
 
 end Default;
 
