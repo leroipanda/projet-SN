@@ -4,13 +4,13 @@ with Liste_Generique;
 procedure main is
    package liste_caractere is new Liste_Generique(Character);
    use liste_caractere;   
-   MonFichier : File_type ;
-   caractere_lu : Character := 'a'; --initialisation pour que l'algo marche
+   MonFichier        : File_type ;
+   caractere_lu      : Character := 'a'; --initialisation pour que l'algo marche
    caractere_lu_prec : Character;
-   colone : integer ;
-   ligne : integer:= 0;
-   nb_caractere : Integer := 0;
-   liste : T_Liste;
+   colone            : integer ;
+   ligne             : integer:= 0;
+   nb_caractere      : Integer := 0;
+   liste             : T_Liste;
    
    
    
@@ -23,39 +23,42 @@ begin
    Initialiser(liste );
      
    
-     --lecture du fichier
+   --lecture du fichier
    loop
       begin
      
      
-   --lecture de element d'une ligne
-   colone := 0;
-   loop  
-      caractere_lu_prec := caractere_lu ;
+         --lecture de element d'une ligne
+         colone := 0;
+         loop  
+            caractere_lu_prec := caractere_lu ;
             Get(MonFichier,caractere_lu);
             --Put(caractere_lu);
-      colone := colone+1;
-      Ajouter_Element(liste,caractere_lu); --ordre de la liste import peu 
+            colone := colone+1;
+            Ajouter_Element(liste,caractere_lu); --ordre de la liste import peu 
       
-      exit when End_Of_Line(MonFichier); --fin de ligne
-   end loop;
+            exit when End_Of_Line(MonFichier); --fin de ligne
+         end loop;
+         --ajout saut de ligne
+         Ajouter_Element(liste,'/');
+         Ajouter_Element(liste,'n');
          nb_caractere := nb_caractere + colone;
          
    
-      Skip_Line(MonFichier,1);
-   exception 
+         Skip_Line(MonFichier,1);
+      exception 
          when CONSTRAINT_ERROR => put("ok"); --reserver pour le fichier vide ,modifier type erreur
        
-   end;
+      end;
       exit when End_Of_File(MonFichier);
    end loop;
    
    for i in 1..20 loop
       
-   put(Element_Debut(liste));
-   Supprimer_premier_Element(liste);
+      put(Element_Debut(liste));
+      Supprimer_premier_Element(liste);
    
-      end loop;
+   end loop;
       
      
    
