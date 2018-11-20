@@ -1,0 +1,20 @@
+[GENERATED OBJECT FILE]
+b__exemple_liste_generique.o
+[PROJECT FILES]
+C:\Users\Nath\Documents\GitHub\projet-SN\default.gpr
+20181120180406
+[BOUND OBJECT FILES]
+C:\Users\Nath\Documents\GitHub\projet-SN\Liste_Generique.o
+C:\Users\Nath\Documents\GitHub\projet-SN\exemple_liste_generique.o
+[GENERATED SOURCE FILES]
+b__exemple_liste_generique.ads
+b__exemple_liste_generique.adb
+b__exemple_liste_generique.ali
+[RESULTING OPTIONS]
+-LC:\Users\Nath\Documents\GitHub\projet-SN\
+-LC:\Users\Nath\Documents\GitHub\projet-SN\
+-LC:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000

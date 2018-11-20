@@ -1,7 +1,9 @@
+test/n
+
 Lors du fort marche haussier du Bitcoin en fin d’annee 2017, certains estimaient (sans preuves) que la creation d’USDT avait favorise la hausse du Bitcoin (BTC). La justice americaine va desormais se pencher sur le sujet.
 
 Bien qu’il n’y avait, à priori jusqu’ici, pas de preuves flagrantes de manipulation des cours du Bitcoin par les emissions d’USDT de Tether, nous apprenons que l’US Department of Justice (DOJ) ouvre une enquete sur ces possibles manipulations.
 
 Le DOJ et la CFTC (Commodity Futures Trading Commission) avaient dejà precedemment ouvert une enquete commune sur les manipulations du marche de la cryptomonnaie, en mai dernier. Mais il s’agirait bien cette fois du rôle particulier de Tether et de son stablecoin.
 
-Dans cette nouvelle enquete, le ministere americain de la Justice va examiner :
+Dans cette nouvelle enquete, le ministere americain de la Justice va examiner :/n

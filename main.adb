@@ -11,7 +11,7 @@ procedure main is
    ligne : integer:= 0;
    nb_caractere : Integer := 0;
    liste : T_Liste;
-   fin_lecture : Boolean := False;
+   
    
    
 begin
@@ -32,21 +32,31 @@ begin
    colone := 0;
    loop  
       caractere_lu_prec := caractere_lu ;
-            Get(MonFichier,caractere_lu);
+            --Get(MonFichier,caractere_lu);
             Put(caractere_lu);
       colone := colone+1;
       Ajouter_Element(liste,caractere_lu); --ordre de la liste import peu 
       
-      exit when caractere_lu_prec = '/' and caractere_lu ='n'; --fin de ligne
+      exit when End_Of_Line(MonFichier); --fin de ligne
    end loop;
          nb_caractere := nb_caractere + colone;
          
    
       Skip_Line(MonFichier,1);
    exception 
-         when CONSTRAINT_ERROR => fin_lecture := True;
+         when CONSTRAINT_ERROR => put("ok"); --reserver pour le fichier vide ,modifier type erreur
        
    end;
-      exit when fin_lecture;
-        end loop;
+      exit when End_Of_File(MonFichier);
+   end loop;
+   
+   
+      put(Element_Debut(liste));
+   Supprimer_premier_Element(liste);
+   put(Element_Debut(liste));
+      
+     
+   
 end main;
+
+
