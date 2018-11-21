@@ -24,31 +24,23 @@ procedure Free is
       Arbre_Recoit.all.Feuille_Gauche := Arbre_A_Ajouter ;
    end Ajouter_Arbre_Gauche;
    
-   procedure Ajouter_Feuille_Gauche(Arbre : in T_Arbre ; Element : in Character; frequence :in Integer) is
+   procedure Ajouter_Feuille_Gauche(Arbre : in T_Arbre ; Element : in T_Element) is
       nouvelle_branche :T_Arbre;
-      nouvelle_feuille : T_Feuille := (Arbre ,null,null,Element,frequence);
+      nouvelle_feuille : T_Feuille := (Arbre ,null,null,Element);
    begin
          nouvelle_branche := new T_Feuille'(nouvelle_feuille);
          Arbre.all.Feuille_Gauche := nouvelle_branche;
    end Ajouter_Feuille_Gauche;
    
-   procedure Ajouter_Feuille_Droite(Arbre : in T_Arbre ; Element : in Character; frequence :in Integer) is
+   procedure Ajouter_Feuille_Droite(Arbre : in T_Arbre ; Element :in T_Element) is
       nouvelle_branche :T_Arbre;
-      nouvelle_feuille : T_Feuille := (Arbre ,null,null,Element,frequence);
+      nouvelle_feuille : T_Feuille := (Arbre ,null,null,Element);
    begin
          nouvelle_branche := new T_Feuille'(nouvelle_feuille);
          Arbre.all.Feuille_Droit := nouvelle_branche;
       end Ajouter_Feuille_Droite;
-      
-      
-     
-   
-   function Element_Arbre (arbre : in T_arbre) return T_Feuille is
-   begin
-      return arbre.all;
-   end Element_Arbre;
-   
-   
+    
+
    
    function Est_Vide (Arbre : in T_Arbre) return Boolean is
    begin

@@ -1,13 +1,22 @@
 with Ada.Text_IO;                 use Ada.Text_IO;
 with Liste_Generique;
-with arbre;use arbre;
-
+with arbre;
 
 
 procedure main is
-   package liste_caractere is new Liste_Generique(Character);
-   package liste_Arbre is new Liste_Generique(T_Arbre);
+   
+   type T_charactere is record 
+      caractere : Character;
+      frequence : Integer;
+   end record;
+   type P_character is access T_charactere;
+   
+      package arbre_element is new arbre(P_character);
+      use arbre_element;  
+   package liste_caractere is new Liste_Generique(T_Charactere);   
    use liste_caractere; 
+   package liste_texte is new Liste_Generique(Character);   
+   use liste_texte;
    
    MonFichier        : File_type ;
    caractere_lu      : Character := 'a'; --initialisation pour que l'algo marche
@@ -15,15 +24,42 @@ procedure main is
    colone            : integer ;
    ligne             : integer:= 0;
    nb_caractere      : Integer := 0;
-   liste             : T_Liste;
+   liste_chara : liste_caractere.T_Liste;
+   texte  : liste_texte.T_Liste;
+   arbre_elem :arbre_element.T_Arbre;
+   
+   --fonction qui incremente la frequence d'un caractere si il est present ou l'ajoute si non present 
+   procedure increment_frequence(liste : in out liste_caractere.T_Liste; chara : Character)is
+      pointeur : liste_caractere.T_Liste := liste ;
+      trouve : Boolean := False;
+   begin
+         while not trouve and not  liste_caractere.Est_Vide(pointeur) loop
+            if liste_caractere.Element_Debut(liste).caractere = chara then
+               trouve :=  True;
+               liste_caractere.modifier_element_debut(pointeur,(liste_caractere.Element_Debut(liste).caractere,liste_caractere.Element_Debut(liste).frequence +1));
+            end if;
+            pointeur := liste_caractere.Addresse_Suivant(pointeur);
+         end loop;
+         if not trouve then 
+            liste_caractere.Ajouter_Element(liste ,(chara,0));
+         end if;
+      end increment_frequence;
+      
+           
+            
+   
+   
+   
+  
     
 begin
-   Put_Line("go");
+   Put_Line("lecture du fichier");
    --ouverture fichier
    Open(MonFichier,in_File,"test_lecture_fichier.txt") ;--bug ici
-   Put_Line("ouvert");
-   --initialisation liste
-   Initialiser(liste );
+   liste_caractere.Initialiser(liste_chara);
+   liste_texte.Initialiser(texte);
+  
+
      
    
    --lecture du fichier
@@ -36,15 +72,18 @@ begin
          loop  
             caractere_lu_prec := caractere_lu ;
             Get(MonFichier,caractere_lu);
+            increment_frequence(liste_chara,caractere_lu);
             --Put(caractere_lu);
             colone := colone+1;
-            Ajouter_Element(liste,caractere_lu); --ordre de la liste import peu 
+           liste_texte.Ajouter_Element(texte,caractere_lu); --ordre de la liste import peu 
       
             exit when End_Of_Line(MonFichier); --fin de ligne
          end loop;
          --ajout saut de ligne
-         Ajouter_Element(liste,'/');
-         Ajouter_Element(liste,'n');
+         liste_texte.Ajouter_Element(texte,'/');
+         liste_texte.Ajouter_Element(texte,'n');
+         increment_frequence(liste_chara,'/');
+         increment_frequence(liste_chara,'n');
          nb_caractere := nb_caractere + colone;
          
    
@@ -57,11 +96,9 @@ begin
    end loop;
     
    --on initialise la  liste d'arbre 
-   initialiser(Arbre);
+   arbre_element.initialiser(arbre_elem);
    
-
-      
-     
+   
    
 end main;
 

@@ -59,6 +59,40 @@ package body Liste_Generique is
 
    end Element_Debut;
 
+   function Est_Present (liste : in T_Liste; element :in T_Type) return Boolean
+   is
+      trouve : Boolean := True;
+      P_liste : T_Liste := liste;
+   begin
+      while  not trouve and P_liste /= null loop
+         if Liste.element = element then
+            trouve := True;
+         end if;
+         P_liste := P_liste.all.suivant;
+      end loop;
+      return trouve;
+   end Est_Present;
+
+   procedure modifier_element_debut(liste : in T_Liste; element :in T_Type) is
+   begin
+      liste.all.element := element;
+   end modifier_element_debut;
+
+   function Addresse_Suivant(liste : in T_Liste) return T_Liste is
+   begin
+      if liste = null then
+         raise EXCEPTION_LISTE_VIDE;
+      else
+         return liste.suivant;
+      end if;
+   end Addresse_Suivant;
+
+
+
+
+
+
+
 
 
 

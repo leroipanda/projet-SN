@@ -19,7 +19,12 @@ package Liste_Generique is
    function Est_Vide(liste : in T_Liste) return Boolean;
    --fonction qui renvoie le premier element de la liste
    function Element_Debut(liste : in T_Liste) return T_Type;
-
+   --fonction qui indique si un element est present
+   function Est_Present (liste : in T_Liste; element :in T_Type) return Boolean;
+   --procedure qui modifie le premier element d'une liste
+   procedure modifier_element_debut(liste : in T_Liste; element :in T_Type);
+   --fonction qui renvoie l'element suivant d'une liste
+   function Addresse_Suivant(liste : in T_Liste) return T_Liste;
 
 
 
