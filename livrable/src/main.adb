@@ -1,5 +1,6 @@
 with Ada.Text_IO;                 use Ada.Text_IO;
 with Liste_Generique;
+with arbre;use arbre;
 
 procedure main is
    package liste_caractere is new Liste_Generique(Character);
