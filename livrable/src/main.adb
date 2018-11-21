@@ -2,9 +2,13 @@ with Ada.Text_IO;                 use Ada.Text_IO;
 with Liste_Generique;
 with arbre;use arbre;
 
+
+
 procedure main is
    package liste_caractere is new Liste_Generique(Character);
-   use liste_caractere;   
+   package liste_Arbre is new Liste_Generique(T_Arbre);
+   use liste_caractere; 
+   
    MonFichier        : File_type ;
    caractere_lu      : Character := 'a'; --initialisation pour que l'algo marche
    caractere_lu_prec : Character;
@@ -12,9 +16,7 @@ procedure main is
    ligne             : integer:= 0;
    nb_caractere      : Integer := 0;
    liste             : T_Liste;
-   
-   
-   
+    
 begin
    Put_Line("go");
    --ouverture fichier
@@ -53,6 +55,9 @@ begin
       end;
       exit when End_Of_File(MonFichier);
    end loop;
+    
+   --on initialise la  liste d'arbre 
+   initialiser(Arbre);
    
 
       
