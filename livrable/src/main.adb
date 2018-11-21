@@ -53,7 +53,7 @@ begin
       exit when End_Of_File(MonFichier);
    end loop;
    
---liste contient les caractère du fichier
+
       
      
    
