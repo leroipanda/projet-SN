@@ -88,6 +88,54 @@ package body Liste_Generique is
    end Addresse_Suivant;
 
 
+   procedure tri(liste : in out T_liste) is
+      pointeur : T_Liste := liste;
+      max  : T_Type ;
+      pointeur_max : T_Liste;
+      cellule_interversion : T_Cellule;
+   begin
+      if Est_Vide(liste ) then
+         raise EXCEPTION_LISTE_VIDE;
+      else
+      max := liste.all.element;
+      Put_Line("ok");
+      if liste.all.suivant /= null then
+
+         while pointeur /= null loop
+            if comparaison(max, pointeur.all.element) then
+               max := pointeur.all.element;
+               pointeur_max :=  pointeur;
+            end if;
+            pointeur := pointeur.all.suivant;
+         end loop;
+      --on intervertit le premier elem et l'element du max
+      cellule_interversion := liste.all;
+      liste.all.suivant := pointeur_max.all.suivant;
+      liste.all.Antecedant := pointeur_max.all.Antecedant;
+      pointeur_max.all.suivant := cellule_interversion.suivant;
+      pointeur_max.all.Antecedant := cellule_interversion.Antecedant;
+
+         tri(liste.suivant);
+
+         end if;
+         end if;
+   exception
+         --erreur pour max la liste est trié
+         when CONSTRAINT_ERROR => Put_Line("c'est vide ici");
+
+   end tri;
+
+   function Renvoie_Element(element: in T_Type) return T_Type is
+   begin
+      return element;
+   end Renvoie_Element;
+
+
+
+
+
+
+
 
 
 

@@ -1,7 +1,9 @@
 -- ce module definit une liste chainÃ©e qui prends un caractere dynamique
 
 generic
-    type T_Type is  private;
+   type T_Type is  private;
+   --fonction qui revera si un element est plus grand q'un autre
+
 package Liste_Generique is
    type T_Cellule is  Private;
    type T_Liste is  private;
@@ -25,6 +27,17 @@ package Liste_Generique is
    procedure modifier_element_debut(liste : in T_Liste; element :in T_Type);
    --fonction qui renvoie l'element suivant d'une liste
    function Addresse_Suivant(liste : in T_Liste) return T_Liste;
+   --fonction qui revoie le t_type en entrée
+   function Renvoie_Element(element: in T_Type) return T_Type;
+
+
+
+   generic
+      --fonction qui revera si un element est plus grand q'un autre
+      with function comparaison(elem1 : T_Type; elem2 : T_Type )return Boolean;
+      --procedure qui trie la liste
+   procedure tri(liste : in out T_Liste) ;
+
 
 
 
