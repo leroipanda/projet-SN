@@ -4,9 +4,9 @@ package body arbre is
 procedure Free is
      new Ada.Unchecked_Deallocation (T_Feuille,T_Arbre);
    
-   procedure initialiser(arbres : out T_Arbre) is 
+   procedure initialiser(arbres :in out T_Arbre;elem :in T_Element) is 
    begin
-      arbres := null;
+      arbres.all := (null,null,null,elem);
    end initialiser;
    
    
@@ -67,6 +67,13 @@ procedure Free is
       end if;
       arbres := nouvelle_branche ;
       
-     end insersion_arbre_ordonne;
+   end insersion_arbre_ordonne;
+   
+   procedure modif_elem(arbres :in out T_Arbre;elem :in T_Element) is
+   begin
+      arbres.all.elem := elem;
+   end modif_elem;
+   
+     
    
 end arbre;

@@ -1,0 +1,108 @@
+V "GNAT Lib v2018"
+M P W=b
+A -O2
+A -gnatA
+A -g
+A -gnatc
+A -mtune=generic
+A -march=x86-64
+P NO FX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U main%b		main.adb		46401404 OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W arbre%s		arbre.adb		arbre.ali
+W liste_generique%s	liste_generique.adb	liste_generique.ali
+
+D ada.ads		20180524051736 76789da1 ada%s
+D a-ioexce.ads		20180524051736 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20180524051736 119b8fb3 ada.streams%s
+D a-textio.ads		20180524051738 881db35a ada.text_io%s
+D arbre.ads		20181122202740 2fb4c317 arbre%s
+D interfac.ads		20180524051736 5ab55268 interfaces%s
+D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
+D liste_generique.ads	20181122192904 403c01eb liste_generique%s
+D main.adb		20181122202846 a1d565a2 main%b
+D system.ads		20180524051738 32a08138 system%s
+D s-crtl.ads		20180524051736 0ebbdb71 system.crtl%s
+D s-ficobl.ads		20180524051738 078245e4 system.file_control_block%s
+D s-parame.ads		20180524051738 48ec542b system.parameters%s
+D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 9|1r6 1r39
+X 4 a-textio.ads
+49K13*Text_IO 471e16 9|1w10 1r43
+52P9*File_Type 9|30r24
+53n23*In_File{53E9} 9|120r20
+92U14*Open 9|120s4
+168U14*Skip_Line 9|156s13
+171V13*End_Of_Line{boolean} 9|145s23
+183V13*End_Of_File{boolean} 9|155s17 162s17
+205U14*Get 9|139s13
+242U14*Put 9|159s35
+263U14*Put_Line 9|57s13 68s13 118s4 125s4 166s4
+X 5 arbre.ads
+3k9*arbre 42e10 9|3w6 21r33
+4P9 T_Arbre 9|23r61[21] 38r30[21] 94r32[21]
+8U14 initialiser 9|98s24[21]
+X 8 liste_generique.ads
+7k9*Liste_Generique 55e20 9|2w6 17r35 19r31 23r31
+9P9 T_Liste 9|21r55[17] 36r34[17] 37r25[19] 39r29[23] 42r65[17] 43r34[17]
+. 93r63[23] 93r99[17] 95r34[17]
+15U15 Initialiser 9|121s20[17] 122s16[19] 124s16[23]
+17U15 Ajouter_Element 9|49s25[17] 61s35[17] 99s22[23] 143s24[19] 148s22[19]
+. 149s22[19]
+21V13 Est_Vide{boolean} 9|47s26[17] 53s29[17] 97s13[17]
+23V13 Element_Debut{9|8R9} 9|55s32[17] 58s78[17] 58s128[17] 66s32[17] 69s78[17]
+. 69s128[17]
+27U14 modifier_element_debut 9|58s29[17] 69s29[17]
+29V13 Addresse_Suivant{9P9[9|17]} 9|53s54[17] 71s44[17] 100s38[17]
+39u14 tri 9|90r48[17]
+X 9 main.adb
+6U11*main 6b11 171l5 171t9
+8R9 T_charactere 12e14 17r51 78r41 78r65
+9e7 caractere{character} 55r56 58r102 66r56 69r102
+10i7 frequence{integer} 58r152 69r152 81r17 81r35
+17K12 liste_caractere[8|7] 18r8 21r39 36r18 42r49 43r18 47r10 49r9 53r13
+. 53r38 55r16 58r13 58r62 58r112 61r19 66r16 69r13 69r62 69r112 71r28 90r32
+. 93r83 95r18 100r22 121r4
+19K12 liste_texte[8|7] 20r8 37r13 122r4 143r12 148r10 149r10
+21K12 arbre_element[5|3] 22r8 23r47 38r16 94r18 98r10
+23K12 liste_arbre[8|7] 24r8 39r17 93r51 99r10 124r4
+30p4 MonFichier{4|52P9} 120m9 120r9 139r17 145r35 155r29 156r23 162r29
+31e4 caractere_lu{character} 138r34 139m28 140r45 143r46
+32e4 caractere_lu_prec{character} 138m13
+33i4 colone{integer} 136m10 142m13 142r23 152r41
+34i4 ligne{integer}
+35i4 nb_caractere{integer} 152m10 152r26
+36p4 liste_chara{8|9P9[17]} 121m32 121r32 140m33 140r33 150m30 150r30 151m30
+. 151r30 167m15 167r15
+37p4 texte{8|9P9[19]} 122m28 122r28 143m40 143r40 148m38 148r38 149m38 149r38
+38p4 arbre_elem{5|4P9[21]}
+39p4 listeArbre{8|9P9[23]} 124m28 124r28
+42U14 increment_frequence 42b14 42=34 42>74 76l11 76t30 140s13 150s10 151s10
+42p34 liste{8|9P9[17]} 43r45 49m41 61m51
+42e74 chara{character} 49r48 55r68 61r58 66r68
+43p7 pointeur{8|9P9[17]} 47r35 53r71 55r46 58r52 58r92 58r142 66r46 69r52
+. 69r92 69r142 71m16 71r61
+44b7 sortie{boolean} 51r18 56m13 62m16 67m13
+78V13 comparaison_Elem{boolean} 78b13 78>30 78>55 87l8 87t24 90r52
+78r30 elem1{8R9} 81r11
+78r55 elem2{8R9} 81r29
+90U14 trie_liste[8|39] 167s4
+93U14 remplire_liste_arbre 93b14 93=35 93>73 102l11 102t31
+93p35 Larbre{8|9P9[23]} 99m38
+93p73 Lcara{8|9P9[17]} 95r45
+94p7 nv_arbre{5|4P9[21]} 98m36 98r36 99r45
+95p7 pointeur{8|9P9[17]} 97r22 98r45 100m10 100r55
+

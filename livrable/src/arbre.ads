@@ -5,7 +5,7 @@ package arbre is
    type T_Feuille is private;
 
    --procedure qui initialise un arbre
-   procedure initialiser(arbres : out T_Arbre);
+   procedure initialiser(arbres : in out T_Arbre;elem :in T_Element);
    -- procedure qui ajoute un arbre du coté gauche d'une feuille
    procedure Ajouter_Arbre_Gauche( Arbre_Recoit : in T_Arbre ; Arbre_A_Ajouter : in T_Arbre);
    -- procedure qui ajoute un arbre du coté droit d'une feuille
@@ -20,7 +20,9 @@ package arbre is
    -- procedure qui insere de facon ordonne dans un arbre
    generic
       with function comparaison(elem1 : T_Element; elem2 : T_Element )return Boolean;
-      procedure Insersion_Arbre_Ordonne(Arbres : in out T_Arbre; elem : in T_Element;nv_elem: T_Element);
+   procedure Insersion_Arbre_Ordonne(Arbres : in out T_Arbre; elem : in T_Element;nv_elem: T_Element);
+   --proceduree qui modifie un element
+   procedure modif_elem(arbres :in out T_Arbre;elem :in T_Element);
         
 
    

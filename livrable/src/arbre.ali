@@ -1,0 +1,81 @@
+V "GNAT Lib v2018"
+A -O2
+A -gnatA
+A -g
+A -gnatc
+A -mtune=generic
+A -march=x86-64
+P NO FX
+
+RN
+RV NO_ALLOCATORS
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U arbre%b		arbre.adb		3b87b3c3 OO PK GE IL
+W ada%s			ada.ads			ada.ali
+W ada.unchecked_deallocation%s
+
+U arbre%s		arbre.ads		2fb4c317 EE OO PK GE IL
+
+D ada.ads		20180524051736 76789da1 ada%s
+D a-uncdea.ads		20180524051736 eff36322 ada.unchecked_deallocation%s
+D arbre.ads		20181122202740 2fb4c317 arbre%s
+D arbre.adb		20181122202740 fbc013f6 arbre%b
+X 1 ada.ads
+16K9*Ada 20e8 4|1r6 5r10
+X 2 a-uncdea.ads
+20u15*Unchecked_Deallocation 4|1w10 5r14
+X 3 arbre.ads
+2+9 T_Element 8r59 17r72 19r72 22r41 22r60 23r73 23r92 25r57 37r14 4|7r58
+. 27r72 35r71 51r70 51r89 72r57
+3k9*arbre 2z9 33E9 42l5 42e10 4|3b14 79l5 79t10
+4P9*T_Arbre 8r42 10r54 10r85 12r54 12r85 15r35 17r49 19r49 23r54 25r40 34r20
+. 35r23 36r24 40c9 4|5r48 7r41 15r54 15r85 21r55 21r86 27r49 28r25 35r49
+. 36r25 45r35 51r54 53r27 54r25 72r40
+5R9*T_Feuille 33c9 38e14 40r27 4|5r38 29r26 31r34 37r26 39r34 57r32 58r30
+8U14*initialiser 8=26 8>50 4|7b14 10l8 10t19
+8p26 arbres{4P9} 4|7b26 9r7
+8*50 elem{2+9} 4|7b49 9r37
+10U14*Ajouter_Arbre_Gauche 10>36 10>64 4|21b14 25l8 25t28
+10p36 Arbre_Recoit{4P9} 4|21b37 23r41 24r7
+10p64 Arbre_A_Ajouter{4P9} 4|21b65 23r7 24r42
+12U14*Ajouter_Arbre_Droite 12>36 12>64 4|15b14 19l8 19t28
+12p36 Arbre_Recoit{4P9} 4|15b36 17r41 18r7
+12p64 Arbre_A_Ajouter{4P9} 4|15b64 17r7 18r41
+15V13*Est_Vide{boolean} 15>23 4|45b13 49l8 49t16
+15p23 arbres{4P9} 4|45b23 48r14
+17U14*Ajouter_Feuille_Droite 17>37 17>59 4|35b14 41l11 41t33
+17p37 Arbres{4P9} 4|35b37 37r40 40r10
+17*59 Element{2+9} 4|35b59 37r58
+19U14*Ajouter_Feuille_Gauche 19>37 19>59 4|27b14 33l8 33t30
+19p37 Arbres{4P9} 4|27b37 29r40 32r10
+19*59 Element{2+9} 4|27b59 29r58
+22V21 comparaison{boolean} 22>33 22>52 4|59s10
+22*33 elem1{2+9}
+22*52 elem2{2+9}
+23u14*Insersion_Arbre_Ordonne 23=38 23>63 23>83 4|51b14 70l8 70t31
+23p38 Arbres{4P9} 4|51b38 59r22 60r48 61r10 64r49 65r10 68m7
+23*63 elem{2+9} 4|51b63 58r68 59r35
+23*83 nv_elem{2+9} 4|51b80 57r58
+25U14*modif_elem 25=25 25>48 4|72b14 75l8 75t18
+25p25 arbres{4P9} 4|72b25 74r7
+25*48 elem{2+9} 4|72b48 74r26
+34p7 Antecedant{4P9} 4|17m27 23m27 61m21 65m21
+35p7 Feuille_Droit{4P9} 4|18m24 40m21 60m31 66m31
+36p7 Feuille_Gauche{4P9} 4|24m24 32m21 62m31 64m31
+37*7 elem{2+9} 4|59r29 74m18
+X 4 arbre.adb
+4U11 Free[2|20]
+28p7 nouvelle_branche{3|4P9} 31m10 32r39
+29r7 nouvelle_feuille{3|5R9} 31r45
+36p7 nouvelle_branche{3|4P9} 39m10 40r38
+37r7 nouvelle_feuille{3|5R9} 39r45
+53p7 nouvelle_branche{3|4P9} 57m7 58r41 60r10 62r10 64r10 66r10 68r17
+54p7 branche_element{3|4P9} 58m7 61r35 62r49 65r35 66r48
+
