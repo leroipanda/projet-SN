@@ -99,21 +99,11 @@ procedure main is
          liste_arbre.Ajouter_Element(Larbre,nv_arbre);
          pointeur := liste_caractere.Addresse_Suivant(pointeur);
       end loop;
-      end remplire_liste_arbre;
+   end remplire_liste_arbre;
+   
+   
         
-           
-   
   
-  
- 
-   
- 
-   
-   
-   
-   
-  
-    
 begin
    Put_Line("lecture du fichier");
    --ouverture fichier
@@ -165,6 +155,7 @@ begin
    --on trie la liste en fonction des fréquences
    Put_Line("tri");
    trie_liste(liste_chara);
+   remplire_liste_arbre(listeArbre , liste_chara);
     
 
   

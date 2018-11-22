@@ -2,10 +2,9 @@ V "GNAT Lib v2018"
 A -O2
 A -gnatA
 A -g
-A -gnatc
 A -mtune=generic
 A -march=x86-64
-P NO FX
+P ZX
 
 RN
 RV NO_ALLOCATORS
@@ -14,19 +13,19 @@ RV NO_STANDARD_STORAGE_POOLS
 RV NO_UNCHECKED_DEALLOCATION
 RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
-RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U arbre%b		arbre.adb		3b87b3c3 OO PK GE IL
+U arbre%b		arbre.adb		3b87b3c3 NE OO PK GE IL
 W ada%s			ada.ads			ada.ali
 W ada.unchecked_deallocation%s
 
-U arbre%s		arbre.ads		2fb4c317 EE OO PK GE IL
+U arbre%s		arbre.ads		2fb4c317 BN EE NE OO PK GE IL
 
 D ada.ads		20180524051736 76789da1 ada%s
 D a-uncdea.ads		20180524051736 eff36322 ada.unchecked_deallocation%s
 D arbre.ads		20181122202740 2fb4c317 arbre%s
 D arbre.adb		20181122202740 fbc013f6 arbre%b
+D system.ads		20180524051738 32a08138 system%s
 X 1 ada.ads
 16K9*Ada 20e8 4|1r6 5r10
 X 2 a-uncdea.ads
