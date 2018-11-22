@@ -1,5 +1,5 @@
 generic 
-   type T_Element is private;
+   type T_Element is private ;
 package arbre is
    type T_Arbre is private;
    type T_Feuille is private;

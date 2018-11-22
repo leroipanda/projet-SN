@@ -101,6 +101,19 @@ procedure main is
       end loop;
    end remplire_liste_arbre;
    
+   procedure Construire_Huffman(Larbre : in out liste_arbre.T_Liste ;Lchara : in out liste_texte.T_Liste;arbre : in out arbre_element.T_Arbre) is
+      function compaison_arbre(elem1 : in liste_caractere.T_Liste ; elem2 :in liste_caractere.T_Liste) return Boolean is
+      begin
+        return comparaison_Elem(elem1.all.frequence,liste_arbre.Renvoie_Element(elem1 ));
+      end compaison_arbre;
+           
+             
+      
+      
+         
+   begin
+      null;
+   end Construire_Huffman;
    
         
   

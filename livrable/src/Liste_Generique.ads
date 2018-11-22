@@ -28,7 +28,7 @@ package Liste_Generique is
    --fonction qui renvoie l'element suivant d'une liste
    function Addresse_Suivant(liste : in T_Liste) return T_Liste;
    --fonction qui revoie le t_type en entrée
-   function Renvoie_Element(element: in T_Type) return T_Type;
+   function Renvoie_Element(liste: in T_Liste) return T_Type;
 
 
 

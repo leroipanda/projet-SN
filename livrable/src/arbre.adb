@@ -4,7 +4,7 @@ package body arbre is
 procedure Free is
      new Ada.Unchecked_Deallocation (T_Feuille,T_Arbre);
    
-   procedure initialiser(arbres :in out T_Arbre;elem :in T_Element) is 
+   procedure initialiser(arbres :in out T_Arbre; elem :in T_Element) is 
    begin
       arbres.all := (null,null,null,elem);
    end initialiser;

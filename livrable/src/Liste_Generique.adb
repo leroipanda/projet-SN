@@ -125,9 +125,9 @@ package body Liste_Generique is
 
    end tri;
 
-   function Renvoie_Element(element: in T_Type) return T_Type is
+   function Renvoie_Element(liste: in T_Liste) return T_Type is
    begin
-      return element;
+      return liste.all.element;
    end Renvoie_Element;
 
 
