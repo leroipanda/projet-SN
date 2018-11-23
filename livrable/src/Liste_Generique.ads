@@ -29,6 +29,8 @@ package Liste_Generique is
    function Addresse_Suivant(liste : in T_Liste) return T_Liste;
    --fonction qui revoie le t_type en entrée
    function Renvoie_Element(liste: in T_Liste) return T_Type;
+   --procedure qui supprime un la cellule cible
+   procedure Supprimer_Cellule(liste: in out T_Liste);
 
 
 

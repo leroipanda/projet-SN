@@ -19,10 +19,12 @@ package arbre is
    procedure Ajouter_Feuille_Gauche(Arbres : in T_Arbre ; Element : in T_Element);
    -- procedure qui insere de facon ordonne dans un arbre
    generic
+      type p_package is private;
       with function comparaison(elem1 : T_Element; elem2 : T_Element )return Boolean;
    procedure Insersion_Arbre_Ordonne(Arbres : in out T_Arbre; elem : in T_Element;nv_elem: T_Element);
    --proceduree qui modifie un element
    procedure modif_elem(arbres :in out T_Arbre;elem :in T_Element);
+   
         
 
    

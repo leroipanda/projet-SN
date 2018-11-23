@@ -125,10 +125,26 @@ package body Liste_Generique is
 
    end tri;
 
-   function Renvoie_Element(liste: in T_Liste) return T_Type is
+   function Renvoie_Element(liste: in  T_Liste) return T_Type is
    begin
       return liste.all.element;
    end Renvoie_Element;
+
+   procedure Supprimer_Cellule(liste: in out T_Liste) is
+      pointeur : T_Liste;
+   begin
+      if Est_Vide(liste) then
+         raise EXCEPTION_LISTE_VIDE;
+      elsif Est_Vide(liste.Antecedant) then
+         pointeur := liste.all.suivant;
+         Free(liste);
+         liste := pointeur;
+      else
+         liste.all.Antecedant.all.suivant := liste.all.suivant;
+         liste.all.suivant.all.Antecedant := liste.all.Antecedant;
+         liste := liste.all.Antecedant;
+      end if;
+   end Supprimer_Cellule;
 
 
 

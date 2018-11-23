@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_file>
-    <file_marker column=" 39" line=" 107" >
+  <Project >
+    <file_marker column=" 9" line=" 111" >
       <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
       <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\main.adb</vfs_file>
     </file_marker>
@@ -14,13 +13,41 @@
       <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
       <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\arbre.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 41" >
+    <file_marker column=" 1" line=" 43" >
       <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
       <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\Liste_Generique.ads</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 1" line=" 133" >
+    <file_marker column=" 1" line=" 133" >
       <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
       <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\Liste_Generique.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 148" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\Liste_Generique.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 140" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\Liste_Generique.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 39" line=" 128" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\Liste_Generique.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 133" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\Liste_Generique.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 116" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 118" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 7" line=" 116" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\main.adb</vfs_file>
     </file_marker>
   </Project>
 </Locations>

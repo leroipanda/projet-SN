@@ -1,0 +1,116 @@
+V "GNAT Lib v2018"
+M P W=b
+A -O2
+A -gnatA
+A -g
+A -gnatc
+A -mtune=generic
+A -march=x86-64
+P NO FX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U main%b		main.adb		5bfb398f OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W arbre%s		arbre.adb		arbre.ali
+W liste_generique%s	liste_generique.adb	liste_generique.ali
+
+D ada.ads		20180524051736 76789da1 ada%s
+D a-ioexce.ads		20180524051736 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20180524051736 119b8fb3 ada.streams%s
+D a-textio.ads		20180524051738 881db35a ada.text_io%s
+D arbre.ads		20181123115522 b1dffa0d arbre%s
+D interfac.ads		20180524051736 5ab55268 interfaces%s
+D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
+D liste_generique.ads	20181123115550 a7c33483 liste_generique%s
+D main.adb		20181123115914 c5fa445b main%b
+D system.ads		20180524051738 32a08138 system%s
+D s-crtl.ads		20180524051736 0ebbdb71 system.crtl%s
+D s-ficobl.ads		20180524051738 078245e4 system.file_control_block%s
+D s-parame.ads		20180524051738 48ec542b system.parameters%s
+D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 9|1r6 1r39
+X 4 a-textio.ads
+49K13*Text_IO 471e16 9|1w10 1r43
+52P9*File_Type 9|30r24
+53n23*In_File{53E9} 9|129r20
+92U14*Open 9|129s4
+168U14*Skip_Line 9|165s13
+171V13*End_Of_Line{boolean} 9|154s23
+183V13*End_Of_File{boolean} 9|164s17 171s17
+205U14*Get 9|148s13
+242U14*Put 9|168s35
+263U14*Put_Line 9|57s13 68s13 127s4 134s4 175s4
+X 5 arbre.ads
+3k9*arbre 44e10 9|3w6 21r33
+4P9 T_Arbre 9|23r61[21] 38r30[21] 94r32[21] 104r139[21] 107r18[21]
+8U14 initialiser 9|98s24[21]
+X 8 liste_generique.ads
+7k9*Liste_Generique 57e20 9|2w6 17r35 19r31 23r31
+9P9 T_Liste 9|21r55[17] 36r34[17] 37r25[19] 39r29[23] 42r65[17] 43r34[17]
+. 93r63[23] 93r99[17] 95r34[17] 104r61[23] 104r102[17]
+15U15 Initialiser 9|130s20[17] 131s16[19] 133s16[23]
+17U15 Ajouter_Element 9|49s25[17] 61s35[17] 99s22[23] 152s24[19] 157s22[19]
+. 158s22[19]
+19U15 Supprimer_premier_Element 9|112s23[17] 114s23[17]
+21V13 Est_Vide{boolean} 9|47s26[17] 53s29[17] 97s13[17]
+23V13 Element_Debut{9|8R9} 9|55s32[17] 58s78[17] 58s128[17] 66s32[17] 69s78[17]
+. 69s128[17] 111s32[17] 113s32[17]
+27U14 modifier_element_debut 9|58s29[17] 69s29[17]
+29V13 Addresse_Suivant{9P9[9|17]} 9|53s54[17] 71s44[17] 100s38[17]
+41u14 tri 9|90r48[17]
+X 9 main.adb
+6U11*main 6b11 181l5 181t9
+8R9 T_charactere 12e14 17r51 78r41 78r65 105r15 106r15
+9e7 caractere{character} 55r56 58r102 66r56 69r102
+10i7 frequence{integer} 58r152 69r152 81r17 81r35
+17K12 liste_caractere[8|7] 18r8 21r39 36r18 42r49 43r18 47r10 49r9 53r13
+. 53r38 55r16 58r13 58r62 58r112 61r19 66r16 69r13 69r62 69r112 71r28 90r32
+. 93r83 95r18 100r22 104r86 111r16 112r7 113r16 114r7 130r4
+19K12 liste_texte[8|7] 20r8 37r13 131r4 152r12 157r10 158r10
+21K12 arbre_element[5|3] 22r8 23r47 38r16 94r18 98r10 104r125
+23K12 liste_arbre[8|7] 24r8 39r17 93r51 99r10 104r49 133r4
+30p4 MonFichier{4|52P9} 129m9 129r9 148r17 154r35 164r29 165r23 171r29
+31e4 caractere_lu{character} 147r34 148m28 149r45 152r46
+32e4 caractere_lu_prec{character} 147m13
+33i4 colone{integer} 145m10 151m13 151r23 161r41
+34i4 ligne{integer}
+35i4 nb_caractere{integer} 161m10 161r26
+36p4 liste_chara{8|9P9[17]} 130m32 130r32 149m33 149r33 159m30 159r30 160m30
+. 160r30 176m15 176r15 177r38
+37p4 texte{8|9P9[19]} 131m28 131r28 152m40 152r40 157m38 157r38 158m38 158r38
+38p4 arbre_elem{5|4P9[21]}
+39p4 listeArbre{8|9P9[23]} 133m28 133r28 177m25 177r25
+42U14 increment_frequence 42b14 42=34 42>74 76l11 76t30 149s13 159s10 160s10
+42p34 liste{8|9P9[17]} 43r45 49m41 61m51
+42e74 chara{character} 49r48 55r68 61r58 66r68
+43p7 pointeur{8|9P9[17]} 47r35 53r71 55r46 58r52 58r92 58r142 66r46 69r52
+. 69r92 69r142 71m16 71r61
+44b7 sortie{boolean} 51r18 56m13 62m16 67m13
+78V13 comparaison_Elem{boolean} 78b13 78>30 78>55 87l8 87t24 90r52 115s10
+78r30 elem1{8R9} 81r11
+78r55 elem2{8R9} 81r29
+90U14 trie_liste[8|41] 176s4
+93U14 remplire_liste_arbre 93b14 93=35 93>73 102l8 102t28 177s4
+93p35 Larbre{8|9P9[23]} 99m38
+93p73 Lcara{8|9P9[17]} 95r45
+94p7 nv_arbre{5|4P9[21]} 98m36 98r36 99r45
+95p7 pointeur{8|9P9[17]} 97r22 98r45 100m10 100r55
+104U14 Construire_Huffman 104b14 104=33 104=70 104=110 122l8 122t26
+104p33 Larbre{8|9P9[23]}
+104p70 Lchara{8|9P9[17]} 111r46 112m49 113r46 114m49
+104p110 arbre{5|4P9[21]}
+105r7 elem1{8R9} 111m7 115r27
+106r7 elem2{8R9} 113m7 115r33
+107p7 nv_arbre{5|4P9[21]}
+

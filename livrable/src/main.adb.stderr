@@ -1,0 +1,2 @@
+main.adb:116:18: expected private type "T_Liste" defined at liste_generique.ads:9, instance at line 17
+main.adb:116:18: found type access to "T_charactere" defined at line 116

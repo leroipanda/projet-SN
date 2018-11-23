@@ -56,7 +56,7 @@ procedure Free is
    begin
       nouvelle_branche :=  new T_Feuille'(null,null,null,nv_elem);
       branche_element := new T_Feuille'(nouvelle_branche,null,null,elem);  
-      if comparaison(Arbres.elem ,elem) then
+      if p_package.comparaison(Arbres.elem ,elem) then
          nouvelle_branche.all.Feuille_Droit := arbres;
          arbres.all.antecedant := branche_element;
          nouvelle_branche.all.Feuille_Gauche := branche_element;
@@ -74,6 +74,7 @@ procedure Free is
       arbres.all.elem := elem;
    end modif_elem;
    
+  
      
    
 end arbre;
