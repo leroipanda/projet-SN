@@ -36,6 +36,7 @@ procedure main is
    liste_chara : liste_caractere.T_Liste;
    texte  : liste_texte.T_Liste;
    arbre_elem :arbre_element.T_Arbre;
+   frequence_arbre : Integer := 0;
    listeArbre : liste_arbre.T_Liste;
   
    --fonction qui incremente la frequence d'un caractere si il est present ou l'ajoute si non present 
@@ -101,25 +102,51 @@ procedure main is
       end loop;
    end remplire_liste_arbre;
    
-   procedure Construire_Huffman(Larbre : in out liste_arbre.T_Liste ;Lchara : in out liste_caractere.T_Liste;arbre : in out arbre_element.T_Arbre) is
+   procedure Construire_Huffman(Larbre : in out liste_arbre.T_Liste ;Lchara : in out liste_caractere.T_Liste;arbre : in out arbre_element.T_Arbre; Varbre : in Integer) is
       elem1 : T_charactere;
+      addresse_Elem1: liste_caractere.T_Liste;
+      addresse_Elem2: liste_caractere.T_Liste;
       elem2 : T_charactere;
       nv_arbre : T_Arbre;
       nv_elem : liste_caractere.T_Liste;
+      nv_frequence :Integer;
+      arbre_final :  T_Arbre;
       
          
    begin
+      
+      addresse_Elem1 := Lchara;
       elem1 := liste_caractere.Element_Debut(Lchara);
       liste_caractere.Supprimer_premier_Element(Lchara);
+      addresse_Elem2 := Lchara;
       elem2 := liste_caractere.Element_Debut(Lchara);
       liste_caractere.Supprimer_premier_Element(Lchara);
-      li
-      if comparaison_Elem(elem1,elem2 ) then
-         null;
-      else
-         null;
+      liste_caractere.Ajouter_Element(Lchara,('"', elem1.frequence +elem2.frequence));
+      arbre_element.initialiser(nv_arbre,Lchara);
+      
+      
+      if comparaison_Elem(elem1,elem2 ) then --elem1/droite et elem2/gauche
          
-         end if;
+         arbre_element.Ajouter_Feuille_Droite(nv_arbre,addresse_Elem1);
+         arbre_element.Ajouter_Feuille_Gauche(nv_arbre,addresse_Elem2);
+      else
+         arbre_element.Ajouter_Feuille_Droite(nv_arbre,addresse_Elem2);
+         arbre_element.Ajouter_Feuille_Gauche(nv_arbre,addresse_Elem1);
+         
+      end if;
+      if elem1.frequence +elem2.frequence > Varbre then
+         arbre_element.initialiser(arbre_final,);
+         arbre_element.Ajouter_Arbre_Droite(arbre_final,nv_arbre);
+         arbre_element.Ajouter_Arbre_Gauche(arbre_final,nv_arbre);
+         arbre := arbre_final;
+      else 
+         arbre_element.initialiser(arbre_final);
+         arbre_element.Ajouter_Arbre_Gauche(arbre_final,nv_arbre);
+         arbre_element.Ajouter_Arbre_Droite(arbre_final,nv_arbre);
+         
+      end if;
+       arbre := arbre_final;
+         
          
    end Construire_Huffman;
    

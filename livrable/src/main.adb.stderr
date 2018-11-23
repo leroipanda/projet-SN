@@ -1,2 +1,3 @@
-main.adb:116:18: expected private type "T_Liste" defined at liste_generique.ads:9, instance at line 17
-main.adb:116:18: found type access to "T_charactere" defined at line 116
+main.adb:138:23: missing argument for parameter "elem" in call to "initialiser" declared at arbre.ads:8, instance at line 21
+main.adb:138:47: extra "," ignored
+main.adb:143:23: missing argument for parameter "elem" in call to "initialiser" declared at arbre.ads:8, instance at line 21
