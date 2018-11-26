@@ -1,0 +1,101 @@
+R0 : raffinage de compression 
+	ouverture du fichier 
+	construire l'arbre 
+	coder le message (a faire)
+
+---R1 --- 
+
+R: Ouverture du fichier 
+	intialisier liste_fichier
+	pour chaque element du fichier :
+		on ajoute l'element à  liste_fichier
+	fin tant que
+
+
+R1 : Construire l'arbre
+
+
+	calculer la frequence de chaque caractere
+	initialiser la liste de cellules  
+	pour chaque caractere
+		initialiser la cellules associee au caractere 
+		l'insere dans la liste à la position correspondant (croisssant de fréquence)
+	fin pour chaque
+	intialise toute les feuilles dans une liste de feuille enregistrement : ( antecedant , pointeur_feuille_droit,ppointeur_feuille_gauche,caractere)
+	tant que la taille de la liste est diffferente de 1
+		construire l'étape suivante de l'arbre 
+	fin tant que
+ 	determiné valeur binnaire de chaque caractere
+
+R1  :coder le message
+	message = ""
+	on initialise liste_message
+	pour chaque element dans liste_fichier (parcourir à l'envers)  ( tant que antecedant != null)
+		pour chaque element1 in caractere (tant que suivant != null)
+		 	si element = element1 alors
+				message = message + element1.code_binaire
+			fin si
+		fin tant que
+	fin tant que
+
+
+
+--- R2 ---
+
+R2 : calculer la fréquence de chaque caractere 
+	initialister une liste d'enregistrement  (caractere ,fréquence,code_binnaire) , liste <- pointeur vers la liste 
+	pour i allant de 1 à liste_fichier
+		pointeur = liste
+		tant que pointeur^ != null or pointeur^.caractere != texte[i] faire
+			pointeur = pointeur^.suivant
+		fin tant que
+		si pointeur^ = null alors
+			on ajoute texte[i] à la liste
+		sinon
+			pointeur^.frequence += 1 
+	fin pour
+
+R2 : insere dans la liste à l'element correspondant
+	pointeur = liste_cellule (pointeur vers la liste de cellule)
+	tant que pointeur != null or cellule.frequence <  pointeur^.elementsuivant.frequence
+		pointeur = pointeur^.suivant
+	fin tant que
+	if pointeur != null then
+		--on insere la cellule dans la liste --
+		pointeur_cellule_Associe^.antecedant =pointeur^.antecedant   
+		pointeur^.antecedant = pointeur_cellule_associé 
+		pointeur_cellule_Associe^.suivant = pointeur
+		pointeur_cellule_associe^.antecedant^.suivant = pointeur_cellule_associe
+
+	sinon(pointeur = null -> element pas present pour l'instant on l'ajoute au début)
+		pointeur_cellule_Assoscié^.suivant = liste_cellule 
+		pointeur_liste_cellule = pointeur_cellule_associé
+
+	fin si 
+
+R2 : Construire l'arbre 
+	on prends les deux premier element de la liste
+	on initialise une feuille " 
+	pointeur"^.pointeur_gauche = pointeur_(second elem de la liste)
+	pointeur"^.pointeur_droite = pointeur_(premier elem)
+	pointeur"^.frequence =	pointeur"^.pointeur_droite.frequence + 	pointeur"^.pointeur_droite.frequence  
+	on insere " à la liste d'arbre
+	on trie la liste d'arbre en fonction de la fréquence
+
+R2 :determiné valeur binnaire de chaque caractere (récursif)
+	valeur binnaire = ""
+	tant pointeur gauche et dtroit different de 0 
+		si droit  alors valeur binnaire =valeur binnaire +"1" 
+		si droit  alors valeur binnaire =valeur binnaire +"0"
+	fin tant que
+	cellule.code_binnaire = valeur binnaire
+
+ 
+
+
+
+		
+
+		
+	
+

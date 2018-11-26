@@ -113,7 +113,7 @@ procedure main is
       liste_caractere.Supprimer_premier_Element(Lchara);
       elem2 := liste_caractere.Element_Debut(Lchara);
       liste_caractere.Supprimer_premier_Element(Lchara);
-      li
+      
       if comparaison_Elem(elem1,elem2 ) then
          null;
       else
