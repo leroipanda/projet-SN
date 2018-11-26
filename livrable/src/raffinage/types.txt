@@ -1,0 +1,23 @@
+limited private
+
+
+
+enumeration T_feuille_arbre
+
+caractere : generique
+frequence : integer
+pointeur droite : pointeur T_feuille_arbre
+pointeur gauche : pointeur T_feuille_gauche
+antecedant : pointeur T_feuille_gauche
+
+enumeration T_cellule_liste
+
+element_suivant : pointeur T_cellule_liste
+antecedant : pointeur T_cellule_liste
+feuille_associe : pointeur T_feuille_arbre
+
+pointeur T_feuille_gauche acess T_feuille_arbre
+pointeur T_feuille_droite acess T_feuille_arbre
+pointeur T_feuille_liste acess T_cellule_liste
+
+
