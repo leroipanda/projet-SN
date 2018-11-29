@@ -1,0 +1,33 @@
+R0 : décompression du fichier binnaire 
+	decoder le texte
+	afficher le message
+----
+
+R1 : raffinage de R0
+
+nb_bit = 0 ; 
+
+tant que fin_fichier = false faire
+tant que not lu
+valeur_bin = valeur_bin + bits suivant du fichier 
+pour i in capacité (nb element du tableau)
+if valeur_bin = tab.code_bin faire
+	ajouter à liste_texte tab.caractere
+	lu = true
+fin pour
+
+fin tant que 
+fin tant que
+
+
+R1: afficher le message
+
+ tant que liste_texte != null
+ 	afficher l'élement liste_texte
+	liste_texte = liste_texte_suivant
+fin tant que
+
+
+--- R2
+
+
