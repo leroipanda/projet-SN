@@ -1,3 +1,0 @@
-main.adb:138:23: missing argument for parameter "elem" in call to "initialiser" declared at arbre.ads:8, instance at line 21
-main.adb:138:47: extra "," ignored
-main.adb:143:23: missing argument for parameter "elem" in call to "initialiser" declared at arbre.ads:8, instance at line 21

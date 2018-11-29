@@ -146,6 +146,11 @@ package body Liste_Generique is
       end if;
    end Supprimer_Cellule;
 
+   function Valeur(elem : in T_Liste) return T_Retour is
+   begin
+      return Renvoie_Valeur(elem );
+      end Valeur;
+
 
 
 

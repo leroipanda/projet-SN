@@ -1,2 +1,0 @@
-arbre.adb:59:10: invalid prefix in selected component "p_package"
-arbre.adb:59:19: prefixed call is only allowed for objects of a tagged type

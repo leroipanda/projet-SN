@@ -102,51 +102,49 @@ procedure main is
       end loop;
    end remplire_liste_arbre;
    
-   procedure Construire_Huffman(Larbre : in out liste_arbre.T_Liste ;Lchara : in out liste_caractere.T_Liste;arbre : in out arbre_element.T_Arbre; Varbre : in Integer) is
-      elem1 : T_charactere;
-      addresse_Elem1: liste_caractere.T_Liste;
-      addresse_Elem2: liste_caractere.T_Liste;
-      elem2 : T_charactere;
-      nv_arbre : T_Arbre;
-      nv_elem : liste_caractere.T_Liste;
-      nv_frequence :Integer;
-      arbre_final :  T_Arbre;
+   procedure Construire_Huffman(Larbre : in out liste_arbre.T_Liste ;Lchara : in out liste_caractere.T_Liste) is
+      function revoie_Telm(liste : in liste_caractere.T_Liste)return T_charactere is
+         begin
+         return liste_caractere.Renvoie_Element(liste);
+      end revoie_Telm; 
       
-         
+      function comparaison_pointeur_elem( poiteur_liste1 : liste_caractere.T_Liste;poiteur_liste2: liste_caractere.T_Liste) return Boolean is
+      begin
+         return comparaison_Elem( revoie_Telm(poiteur_liste1),revoie_Telm(poiteur_liste2));
+         end comparaison_pointeur_elem;
+       
+   
+      
+      function comparaison_liste_arbre( arbre1 : liste_arbre.T_Type;arbre2 : liste_arbre.T_Type ) return Boolean is
+      begin
+         --à finir
+         return 
+         end comparaison_liste_arbre;
+                          
+                          
+      function Valeur_pointeur_elem is new liste_caractere.Valeur(T_charactere,revoie_Telm);
+      function fusion_arbre is new arbre_element.Fusion_Arbre_Ordonne(comparaison_pointeur_elem);
+      procedure tri_arbre is new liste_arbre.tri(comparaison_liste_arbre);
+      
+      arbre_resultant : arbre_element.T_Arbre;
+      nv_charactere : T_charactere:=('"',0);
+      test : arbre_element.T_Arbre;
+      test2 : arbre_element.T_Arbre;
+      
+      
    begin
+      --calcule de la nouvelle fréquence
+      nv_charactere.frequence := liste_caractere.Renvoie_Element(arbre_element.Renvoie_Element(liste_arbre.Renvoie_Element(Larbre))).frequence +liste_caractere.Renvoie_Element(arbre_element.Renvoie_Element(liste_arbre.Renvoie_Element(liste_arbre.Addresse_Suivant(Larbre)))).frequence;
+      --créaton de l'arbre fusionn
+      test := liste_arbre.Renvoie_Element(Larbre);
+      test2 := liste_arbre.Renvoie_Element(liste_arbre.Addresse_Suivant(Larbre));
+      liste_caractere.Ajouter_Element(Lchara,nv_charactere);
+      arbre_resultant := fusion_arbre(test,test2,Lchara);
+      liste_arbre.Supprimer_Cellule(Larbre);
+      liste_arbre.Supprimer_Cellule(Larbre);
+      liste_arbre.Ajouter_Element(Larbre,arbre_resultant);
       
-      addresse_Elem1 := Lchara;
-      elem1 := liste_caractere.Element_Debut(Lchara);
-      liste_caractere.Supprimer_premier_Element(Lchara);
-      addresse_Elem2 := Lchara;
-      elem2 := liste_caractere.Element_Debut(Lchara);
-      liste_caractere.Supprimer_premier_Element(Lchara);
-      liste_caractere.Ajouter_Element(Lchara,('"', elem1.frequence +elem2.frequence));
-      arbre_element.initialiser(nv_arbre,Lchara);
       
-      
-      if comparaison_Elem(elem1,elem2 ) then --elem1/droite et elem2/gauche
-         
-         arbre_element.Ajouter_Feuille_Droite(nv_arbre,addresse_Elem1);
-         arbre_element.Ajouter_Feuille_Gauche(nv_arbre,addresse_Elem2);
-      else
-         arbre_element.Ajouter_Feuille_Droite(nv_arbre,addresse_Elem2);
-         arbre_element.Ajouter_Feuille_Gauche(nv_arbre,addresse_Elem1);
-         
-      end if;
-      if elem1.frequence +elem2.frequence > Varbre then
-         arbre_element.initialiser(arbre_final,);
-         arbre_element.Ajouter_Arbre_Droite(arbre_final,nv_arbre);
-         arbre_element.Ajouter_Arbre_Gauche(arbre_final,nv_arbre);
-         arbre := arbre_final;
-      else 
-         arbre_element.initialiser(arbre_final);
-         arbre_element.Ajouter_Arbre_Gauche(arbre_final,nv_arbre);
-         arbre_element.Ajouter_Arbre_Droite(arbre_final,nv_arbre);
-         
-      end if;
-       arbre := arbre_final;
-         
          
    end Construire_Huffman;
    

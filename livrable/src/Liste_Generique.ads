@@ -40,6 +40,11 @@ package Liste_Generique is
       --procedure qui trie la liste
    procedure tri(liste : in out T_Liste) ;
 
+   generic
+      --fonctiion qui revoie un valeur de l'element
+      type T_Retour is private;
+      with function Renvoie_Valeur(elem :in T_Liste) return T_Retour;
+      function Valeur(elem : in T_Liste) return T_Retour;
 
 
 

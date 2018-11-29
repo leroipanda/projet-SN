@@ -48,33 +48,33 @@ procedure Free is
       return Arbres = null;
    end Est_Vide;
    
-   procedure Insersion_Arbre_Ordonne(Arbres : in out T_Arbre; elem : T_Element;nv_elem: T_Element) is
+   function Fusion_Arbre_Ordonne(arbre1 : in out T_Arbre; arbre2: in out  T_Arbre;nv_elem :in T_Element) return T_Arbre is
       
-      nouvelle_branche  : T_Arbre ;
-      branche_element : T_Arbre;
-      
+      nouvelle_arbre  : T_Arbre ;
+         
    begin
-      nouvelle_branche :=  new T_Feuille'(null,null,null,nv_elem);
-      branche_element := new T_Feuille'(nouvelle_branche,null,null,elem);  
-      if p_package.comparaison(Arbres.elem ,elem) then
-         nouvelle_branche.all.Feuille_Droit := arbres;
-         arbres.all.antecedant := branche_element;
-         nouvelle_branche.all.Feuille_Gauche := branche_element;
+      nouvelle_arbre :=  new T_Feuille'(null,null,null,nv_elem);  
+      if comparaison(arbre1.all.elem,arbre2.all.elem) then
+         Ajouter_Arbre_Droite(nouvelle_arbre,arbre1);
+         Ajouter_Arbre_Gauche(nouvelle_arbre,arbre2);
       else
-         nouvelle_branche.all.Feuille_Gauche := arbres;
-         arbres.all.antecedant := branche_element;
-         nouvelle_branche.all.Feuille_Droit := branche_element;
+         Ajouter_Arbre_Droite(nouvelle_arbre,arbre2);
+         Ajouter_Arbre_Gauche(nouvelle_arbre,arbre1);
       end if;
-      arbres := nouvelle_branche ;
+      return nouvelle_arbre;
       
-   end insersion_arbre_ordonne;
+   end Fusion_Arbre_Ordonne;
    
    procedure modif_elem(arbres :in out T_Arbre;elem :in T_Element) is
    begin
       arbres.all.elem := elem;
    end modif_elem;
    
-  
+   function Renvoie_Element(arbres :in T_Arbre) return T_Element is
+   begin
+      return arbres.all.elem;
+   end Renvoie_Element;
+   
      
    
 end arbre;
