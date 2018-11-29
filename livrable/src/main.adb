@@ -117,7 +117,7 @@ procedure main is
       
       function comparaison_liste_arbre( arbre1 : liste_arbre.T_Type;arbre2 : liste_arbre.T_Type ) return Boolean is
       begin
-         --à finir
+         --ï¿½ finir
          return 
          end comparaison_liste_arbre;
                           
@@ -133,9 +133,9 @@ procedure main is
       
       
    begin
-      --calcule de la nouvelle fréquence
+      --calcule de la nouvelle frï¿½quence
       nv_charactere.frequence := liste_caractere.Renvoie_Element(arbre_element.Renvoie_Element(liste_arbre.Renvoie_Element(Larbre))).frequence +liste_caractere.Renvoie_Element(arbre_element.Renvoie_Element(liste_arbre.Renvoie_Element(liste_arbre.Addresse_Suivant(Larbre)))).frequence;
-      --créaton de l'arbre fusionn
+      --crï¿½aton de l'arbre fusionn
       test := liste_arbre.Renvoie_Element(Larbre);
       test2 := liste_arbre.Renvoie_Element(liste_arbre.Addresse_Suivant(Larbre));
       liste_caractere.Ajouter_Element(Lchara,nv_charactere);
@@ -144,7 +144,7 @@ procedure main is
       liste_arbre.Supprimer_Cellule(Larbre);
       liste_arbre.Ajouter_Element(Larbre,arbre_resultant);
       
-      
+--on trie la liste d'arbre  
          
    end Construire_Huffman;
    
@@ -198,13 +198,25 @@ begin
       exit when End_Of_File(MonFichier);
    end loop;
 
-   --on trie la liste en fonction des fréquences
+   --on trie la liste en fonction des frï¿½quences
    Put_Line("tri");
    trie_liste(liste_chara);
    remplire_liste_arbre(listeArbre , liste_chara);
-    
+--On construit l'arbre de huffman 
+    While liste_arbre.Addresse_Suivant(listeArbre) /= null loop
+Construire_Huffman(liste_chara, listeArbre) ;
+end loop ;
 
-  
+--on associe le code binnaire Ã  chaque caractÃ¨re grÃ¢ce Ã  l'arbre de huffman 
+
+while listeArbre /= null loop 
+
+--on detemine le code binaire du caractÃ¨re 
+BinnaireAssocie(listeArbre) ;
+ListeArbre  := liste_arbre.addresse_Suivant(liste_arbre) ;
+
+end loop;
+
 end main;
 
 
