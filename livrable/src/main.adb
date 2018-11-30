@@ -114,17 +114,32 @@ procedure main is
          end comparaison_pointeur_elem;
        
    
-      
-      function comparaison_liste_arbre( arbre1 : liste_arbre.T_Type;arbre2 : liste_arbre.T_Type ) return Boolean is
-      begin
-         --à finir
-         return 
-         end comparaison_liste_arbre;
+
+        
                           
-                          
+       --fonction qui trie un arbre pas instancie de facon generique probleme avec les types privés                   
       function Valeur_pointeur_elem is new liste_caractere.Valeur(T_charactere,revoie_Telm);
-      function fusion_arbre is new arbre_element.Fusion_Arbre_Ordonne(comparaison_pointeur_elem);
-      procedure tri_arbre is new liste_arbre.tri(comparaison_liste_arbre);
+         function fusion_arbre is new arbre_element.Fusion_Arbre_Ordonne(comparaison_pointeur_elem);
+         
+         procedure tri_elem_liste_arbre( Larbre :  in out liste_arbre.T_Liste) is
+         
+         
+      begin
+         --on trie le premier element de la liste
+         
+         while not liste_arbre.Est_Vide(liste_arbre.Addresse_Suivant(Larbre)) loop
+         while not -- la comparaisoon  loop
+           --on echange place tanque le nouvelle element est pas à sa place 
+               liste_arbre.echange_position_premier(Larbre);
+               pointeur := liste_arbre.Addresse_Suivant(Larbre);
+
+            end loop;
+         end loop;
+         end tri_elem_liste_arbre;
+         
+          
+         
+     -- procedure tri_arbre is new liste_arbre.tri(comparaison_liste_arbre);
       
       arbre_resultant : arbre_element.T_Arbre;
       nv_charactere : T_charactere:=('"',0);
@@ -143,6 +158,8 @@ procedure main is
       liste_arbre.Supprimer_Cellule(Larbre);
       liste_arbre.Supprimer_Cellule(Larbre);
       liste_arbre.Ajouter_Element(Larbre,arbre_resultant);
+      tri_elem_liste_arbre( Larbre );
+   
       
       
          

@@ -9,7 +9,9 @@ package Liste_Generique is
    type T_Liste is  private;
 
 
-    EXCEPTION_LISTE_VIDE :EXCEPTION ;
+   EXCEPTION_LISTE_VIDE :EXCEPTION ;
+   --liste.all.suivant = null
+   EXCEPTION_LISTE_PAS_ASSEZ_GRANDE :EXCEPTION ;
 
     -- procedure qui initialise une liste chainÃ©
     procedure Initialiser(liste:out T_Liste) ;
@@ -29,6 +31,8 @@ package Liste_Generique is
    function Addresse_Suivant(liste : in T_Liste) return T_Liste;
    --fonction qui revoie le t_type en entrée
    function Renvoie_Element(liste: in T_Liste) return T_Type;
+   --procedure qui echange la position des deux premier elemebt de la liste
+   procedure echange_position_premier(liste : in out T_liste);
    --procedure qui supprime un la cellule cible
    procedure Supprimer_Cellule(liste: in out T_Liste);
 

@@ -152,14 +152,19 @@ package body Liste_Generique is
       end Valeur;
 
 
+   procedure echange_position_premier(liste : in out T_liste) is
+      element :T_Type := liste.all.element;
 
-
-
-
-
-
-
-
+   begin
+      if  Est_Vide(liste) then
+         raise EXCEPTION_LISTE_VIDE;
+      elsif Est_Vide(Addresse_Suivant(liste)) then
+         raise EXCEPTION_LISTE_PAS_ASSEZ_GRANDE;
+      else
+            liste.all.element :=Addresse_Suivant(liste).all.element;
+            Addresse_Suivant(liste).all.element := element;
+      end if;
+      end echange_position_premier;
 
 
 
