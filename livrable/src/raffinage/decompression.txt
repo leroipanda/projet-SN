@@ -1,33 +1,71 @@
-R0 : décompression du fichier binnaire 
-	decoder le texte
-	afficher le message
-----
+la table est un tableau de 8 elements remplis de tableau de de caractere de taille 128
 
-R1 : raffinage de R0
+R0 : décompression du fichier binnaire compressé à l'aide de Huffman
 
-nb_bit = 0 ; 
+R1: raffinage de décompression du fichier binnaire compressé à l'aide de Huffman
 
-tant que fin_fichier = false faire
-tant que not lu
-valeur_bin = valeur_bin + bits suivant du fichier 
-pour i in capacité (nb element du tableau)
-if valeur_bin = tab.code_bin faire
-	ajouter à liste_texte tab.caractere
-	lu = true
-fin pour
+	ouverture et lecture du contenus du fichier( in : string nomfichier, out : File_type fichier)
+	extraction du tableau ( in fichier, out tableau de tableau charactere table)
+	extraction du contenus du fichier compresser dans un nouveau fichier.txt (in fichier,table  ,out  File_type nouveau_fichier) 
 
-fin tant que 
-fin tant que
+------------------------------------R2--------------------------------------------------------------------
+
+R2 raffinage de	ouverture et lecture du contenus du fichier ( in : string nomfichier, out : File_type fichier)
+
+	fichier = ouvrir le fichier( nomfichier)
+
+R2 : raffinage de R1 extraction du tableau ( in fichier, out tableau de charactere table) 
+-- le tableau se situe à la premiere ligne du fichier compressé ,la table est donnée dans l'ordre suivant :  caractere , longeur , code  chaqu'une de ces valeurs est données par un octet
+	table  = tableau de caractere de taille 128 nombre de caracteres du code ascii
+	OctetCaractere : Integer 
+	OctetLongeur : Integer
+	OctetCode : Integer
+	PositionenOctet : integer := 0 -la colone ou l'on se situe pas sçr que cela ne soit réelement necessaire
+	tant ligne 1 n'est pas fini faire
+		OctetCaractere = lire l'octet suivant du fichier ( out Integer)
+		OctetLongeur = lire l'octet suivant du fichier (out Integer)
+		OctetCode  = lire l'octet suivant du fichier (out Integer)
+		table[octetLongeur][octetCode] = convertir ascii vers caractere(octetCaractere)
+		positionOctet := positionOctet +24 
+	fin faire
+
+R2 : extraction du contenus du fichier compresser dans un nouveau fichier.txt (in fichier,table  ,out  File_type nouveau_fichier) 
+	on passe un ligne du fichier -- fonction déjà existante en ada
+	valeurHuffmann : Integer
+	taille : Integer  
+	convertie : Boolean 
+	tant que ligne 2 n'est pas fini
+		Boolean := False
+		taille := 1
+		tant que not Convertie
+			valeurHuffman := valeurHuffman  +( lire_element_suivant_du_fichier )*2^(8-taille)                                                          --fonction déjà implementer en ada
+			if table[taille][valeur] /= null alors
+				ajouter_caractere(in table[taille][valeur]  , in out   nouveau_fichier)
+			fin si
+			taille := taille+1
+		fin tant que
+
+	fin tabt que
+	ferme les deux fichier
 
 
-R1: afficher le message
-
- tant que liste_texte != null
- 	afficher l'élement liste_texte
-	liste_texte = liste_texte_suivant
-fin tant que
 
 
---- R2
 
+----------------------------------R3-----------------------------------------
 
+R3 : raffinage de lire l'octet suivant du fichier ( out Integer)
+	Octet_Lu : integer
+	pour i allant de 1 à 8 Faire
+		Octet_Lu := Octet + 2^(8-i) * lire_element_suivant_du_fichier --fonction déjà implementer en ada
+	fin Faire
+	return Octet_Lu
+
+R3 : raffinage de ajouter_caractere(caracter_lu : in caractere, fichier : in out  File_type)
+	ecrire(nouveau_fichier,caractere_lu)
+	
+
+		
+	
+
+ 
