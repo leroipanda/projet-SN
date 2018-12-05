@@ -1,0 +1,10 @@
+project Default is
+
+   for Main use ("decompression.adb");
+
+   package Compiler is
+      for Switches ("ada") use ("-g", "-O2");
+   end Compiler;
+
+end Default;
+

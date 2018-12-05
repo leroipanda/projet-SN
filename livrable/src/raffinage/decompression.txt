@@ -1,4 +1,4 @@
-la table est un tableau de 8 elements remplis de tableau de de caractere de taille 128
+﻿la table est un tableau de 8 elements remplis de tableau de de caractere de taille 128
 
 R0 : décompression du fichier binnaire compressé à l'aide de Huffman
 
@@ -38,7 +38,7 @@ R2 : extraction du contenus du fichier compresser dans un nouveau fichier.txt (i
 		Boolean := False
 		taille := 1
 		tant que not Convertie
-			valeurHuffman := valeurHuffman  +( lire_element_suivant_du_fichier )*2^(8-taille)                                                          --fonction déjà implementer en ada
+			valeurHuffman := valeurHuffman*2  +( lire_element_suivant_du_fichier )                                                          --fonction déjà implementer en ada
 			if table[taille][valeur] /= null alors
 				ajouter_caractere(in table[taille][valeur]  , in out   nouveau_fichier)
 			fin si

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project >
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 7" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 51" line=" 40" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 69" line=" 56" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 57" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 74" line=" 89" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

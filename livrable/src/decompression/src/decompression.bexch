@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__decompression.o
+[PROJECT FILES]
+C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr
+20181204224948
+[BOUND OBJECT FILES]
+C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.o
+[GENERATED SOURCE FILES]
+b__decompression.ads
+b__decompression.adb
+b__decompression.ali
+[RESULTING OPTIONS]
+-LC:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\
+-LC:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\
+-LC:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000
