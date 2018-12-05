@@ -4,9 +4,11 @@ with  Ada.Text_IO; use  Ada.Text_IO;
 procedure Decompression is
    Fichier : File_type ;
    nouveau_Fichier : File_Type;
+   Taille_table :constant Integer := 257;
+   Taille_octet :constant Integer := 8;
    nom : String := "test1.txt";
-   Type T_Tableau is array(1..257) of Character ;
-   Type T_Table is array(1..8) of T_Tableau;
+   Type T_Tableau is array(1..Taille_table) of Character ;
+   Type T_Table is array(1..Taille_octet) of T_Tableau;
    Table : T_Table;
 
 
@@ -16,8 +18,8 @@ begin
    --ouverture et lecture du contenus du fichier( in : string nomfichier, out : File_type fichier)
    open(Fichier,In_File, "test.txt") ;
    --on itialise la table
-   for i in 1..8 loop
-      for j in 1..257 loop
+   for i in 1..Taille_octet loop
+      for j in 1..Taille_table loop
          Table(i)(j) := '²'; --caractere non present dans la table ascii
       end  loop;
 
@@ -35,7 +37,7 @@ begin
       cara_lu :  Character ;
 
    begin
-      for i in 1..8 loop
+      for i in 1..Taille_octet loop
             Get(fichier, cara_lu);
             -- Put_Line(Character'Image(cara_lu));
             --Put_Line( Integer'Image(Character'Pos(cara_lu)));
@@ -82,11 +84,11 @@ begin
          while not convertie loop
          Get(fichier, cara_lu);
          valeurHuffman := valeurHuffman *2   +(Character'Pos(cara_lu)-48) ;-- o vaut 48 lors de la conversion
-         Put_Line(Integer'Image(valeurHuffman));
+         --Put_Line(Integer'Image(valeurHuffman));
 
             if Table(taille)(valeurHuffman+1) /=  '²'  then
-               Put_Line("---entree---");
-               Put_Line(Character'Image(Table(taille)(valeurHuffman+1)));
+              -- Put_Line("---entree---");
+               --Put_Line(Character'Image(Table(taille)(valeurHuffman+1)));
                Put(nouveau_Fichier,Table(taille)(valeurHuffman+1));
                convertie := True;
             end if;
