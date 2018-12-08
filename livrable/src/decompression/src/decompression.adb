@@ -1,5 +1,7 @@
 with  Ada.Text_IO; use  Ada.Text_IO;
 
+PACKAGE P_integer_file IS NEW Ada.Direct_IO(Integer) ;
+use P_integer_file;
 
 procedure Decompression is
    Fichier : File_type ;
@@ -25,7 +27,43 @@ begin
 
    end loop;
 
+   --extraction de la table
+   declare
+      nb_cara := Integer :=0 ; -- à modifier
+      valeur : integer :=0;
+      memoir : Boolean := False;
+      compteur_caractere : Integer :=0;
+      bit_lu : Integer;
 
+
+   begin
+--manque gestion de la profondeur et enregistrement dans la table
+      while compteur_caractere /= nb_cara loop
+         P_integer_file.read(Fichier,bit_lu,count(i));
+         if bit_lu =0 then
+            if memoir then
+             valeur = valeur * 2+1;
+            else
+              valeur = valeur * 2;
+            end if;
+
+         else
+            if (valeur mod 2) =0 then
+--on enregistre la valeur dans le tableau
+               memoir := True;
+               valeur :=valeur/2
+            else
+               memoir := False;
+               valeur :=valeur/2
+            end if;
+
+         end if;
+
+
+
+
+            end loop;
+   end
 
    --extraction du tableau ( in fichier, out tableau de tableau charactere table)
    declare
