@@ -22,7 +22,7 @@ begin
    --on itialise la table
    for i in 1..Taille_octet loop
       for j in 1..Taille_table loop
-         Table(i)(j) := '²'; --caractere non present dans la table ascii
+         Table(i)(j) := 'ù'; --caractere non present dans la table ascii
       end  loop;
 
    end loop;
@@ -124,7 +124,7 @@ begin
          valeurHuffman := valeurHuffman *2   +(Character'Pos(cara_lu)-48) ;-- o vaut 48 lors de la conversion
          --Put_Line(Integer'Image(valeurHuffman));
 
-            if Table(taille)(valeurHuffman+1) /=  '²'  then
+            if Table(taille)(valeurHuffman+1) /=  'ù'  then
               -- Put_Line("---entree---");
                --Put_Line(Character'Image(Table(taille)(valeurHuffman+1)));
                Put(nouveau_Fichier,Table(taille)(valeurHuffman+1));
