@@ -57,7 +57,7 @@ begin
             return valeur;
         end lire_octet;
 
-         type cote is (Droite,Gauche);
+        type position is (Droite,Gauche,noeuds);
         nb_caractere : Integer:=0;
         caractere_traduit : Integer:=0;
         taille_texte : integer;
@@ -67,7 +67,7 @@ begin
         valeur_lu :T_bit;
         memoire :boolean := False;
         taille : integer :=0;
-        position_arbre : cote := Gauche;
+        position_arbre : position := Droite;
 
 
 
@@ -89,37 +89,34 @@ begin
             read(Fichier,valeur_lu);
             put_line("bit lu : " & integer'Image(integer(valeur_lu)) & " valeur : " & integer'Image(valeur));
             if integer(valeur_lu) = 0 then
-                if memoire = false then
-                    position_arbre := droite;
-                else
+                if position_arbre = noeuds then
                     position_arbre := gauche;
-                end if ;
-
-                taille :=taille+1;
-                if position_arbre = Droite then
-                    valeur := valeur*2 + 1;
-
-                else
-                    valeur := valeur*2;
                 end if;
 
-            else
-                taille:= taille-1;
-                valeur := valeur / 2;
-                if memoire  then
-                    --on remonte
-                    null;
-                else
-                     --on remonte et
+                taille := taille +1;
+                if position_arbre = droite then
+                    valeur := valeur*2 ;
+
+                else --gauche
+                    valeur := valeur *2 + 1 ;
+                    position_arbre := Droite;
+                end if ;
+
+
+            else  -- valeur_lu = 1
+                taille := taille -1;
+
+                if position_arbre /= noeuds  then
+
                      --on enregistre
                     caractere_traduit := caractere_traduit+1;
                     table(taille)(valeur+1) := tableau_cara(caractere_traduit);
                     put_line( character'Image(tableau_cara(caractere_traduit)) & " = " & Integer'Image(valeur) );
-                    memoire := true;
+                    position_arbre := noeuds ; --je suis maintenant sur un noeuds
 
 
                 end if;
-
+                valeur := valeur / 2 ;
             end if;
             end loop ;
 
