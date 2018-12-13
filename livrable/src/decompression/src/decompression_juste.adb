@@ -8,6 +8,8 @@ procedure Decompression_juste is
    PACKAGE P_integer_file IS NEW Ada.Sequential_IO(T_bit) ;
    USE P_integer_file ;
 
+
+
    Fichier : P_integer_file.File_type ;
    nouveau_Fichier : Ada.Text_IO.File_Type;
    Taille_table :constant Integer := 257;
@@ -15,7 +17,8 @@ procedure Decompression_juste is
    Taille_texte_encode :constant Integer :=4;
     Taille_arbre_encode :constant Integer :=1;
     cara_test :constant Character :='@' ;
-
+    taille_texte : integer;
+     taille_arbre : integer;
    nom : String := "test1.txt";
    Type T_Tableau is array(1..Taille_table) of Character ;
    Type T_Table is array(1..Taille_octet) of T_Tableau;
@@ -60,13 +63,11 @@ begin
         type position is (Droite,Gauche,noeuds);
         nb_caractere : Integer:=0;
         caractere_traduit : Integer:=0;
-        taille_texte : integer;
-        taille_arbre : integer;
         tableau_cara : T_Tableau;
         valeur : integer:=0;
         valeur_lu :T_bit;
         memoire :boolean := False;
-        taille : integer :=1;
+        taille : integer :=0;
         position_arbre : position := Droite;
 
 
@@ -104,7 +105,7 @@ begin
 
 
             else  -- valeur_lu = 1
-                taille := taille -1;
+
 
                 if position_arbre /= noeuds  then
 
@@ -116,6 +117,7 @@ begin
 
 
                 end if;
+                taille := taille -1;
                 valeur := valeur / 2 ;
             end if;
             end loop ;
@@ -139,7 +141,8 @@ begin
     declare
 
       valeurHuffman : Integer;
-      taille : Integer:=1;
+        taille : Integer:=1;
+        taille_texte_lu:integer :=0;
       convertie : Boolean;
       inte_lu :  T_bit ;
 
@@ -149,7 +152,8 @@ begin
 
       create(nouveau_Fichier,Out_File,nom) ;
 
-      while not P_integer_file.End_Of_File(Fichier) loop
+      while not   P_integer_file.End_of_file(Fichier) loop
+    --  while taille_texte_lu < taille_texte loop
          convertie := false;
          taille := 1;
          valeurHuffman :=0;
@@ -170,8 +174,8 @@ begin
          taille := taille+1;
 
           end loop;
-
-
+          taille_texte_lu := taille_texte_lu + taille -1;
+           --put_line(integer'image(taille_texte_lu));
 
       end loop;
 
