@@ -29,7 +29,7 @@ begin
    --on itialise la table
    for i in 1..Taille_octet loop
         for j in 1..Taille_table loop
-            null;
+
             Table(i)(j) := cara_test;  --caractere non present dans la table ascii
       end  loop;
 
@@ -53,7 +53,7 @@ begin
                 end if;
 
             end loop;
-            put(integer'Image(valeur));
+          --  put(integer'Image(valeur));
             return valeur;
         end lire_octet;
 
@@ -66,7 +66,7 @@ begin
         valeur : integer:=0;
         valeur_lu :T_bit;
         memoire :boolean := False;
-        taille : integer :=0;
+        taille : integer :=1;
         position_arbre : position := Droite;
 
 
@@ -83,11 +83,11 @@ begin
             tableau_cara(i) := Character'Val(lire_octet(1));
         end loop;
         --
-        put_line("lecture parcour");
+        --put_line("lecture parcour");
         --on lit le parcour de l'arbre
         while caractere_traduit /= taille_arbre loop
             read(Fichier,valeur_lu);
-            put_line("bit lu : " & integer'Image(integer(valeur_lu)) & " valeur : " & integer'Image(valeur));
+           -- put_line("bit lu : " & integer'Image(integer(valeur_lu)) & " valeur : " & integer'Image(valeur));
             if integer(valeur_lu) = 0 then
                 if position_arbre = noeuds then
                     position_arbre := gauche;
@@ -111,7 +111,7 @@ begin
                      --on enregistre
                     caractere_traduit := caractere_traduit+1;
                     table(taille)(valeur+1) := tableau_cara(caractere_traduit);
-                    put_line( character'Image(tableau_cara(caractere_traduit)) & " = " & Integer'Image(valeur) );
+                    --put_line( character'Image(tableau_cara(caractere_traduit)) & " = " & Integer'Image(valeur) );
                     position_arbre := noeuds ; --je suis maintenant sur un noeuds
 
 
@@ -122,6 +122,17 @@ begin
 
 
     end;
+    --affichage de la table
+    --for i in 1..Taille_octet loop
+        --for j in 1..Taille_table loop
+            --if table(i)(j) /= '@' then
+            --put_line("taille : " & integer'Image(i) & " valeur : " & integer'Image(j) &" "& character'Image(table(i)(j) ));
+                --     end if;
+        --end loop;
+    --end loop;
+
+
+
 
     --la table est corectement remplis maintenant
     --il reste plus que à decompresse le contenu maitenant
@@ -149,9 +160,9 @@ begin
                 else
                     valeurHuffman := valeurHuffman *2   ;
                 end if;
-
+            --put_line("bit lu : " & integer'Image(integer(inte_lu)) & " valeur : " & integer'Image(valeurHuffman));
             if Table(taille)(valeurHuffman+1) /=  cara_test  then
-              -- Put_Line("---entree---");
+              --Put_Line("---entree---");
                --Put_Line(Character'Image(Table(taille)(valeurHuffman+1)));
                Put(nouveau_Fichier,Table(taille)(valeurHuffman+1));
                convertie := True;
