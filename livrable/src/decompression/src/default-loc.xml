@@ -1,7 +1,40 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project >
-    <file_marker current="true" column=" 1" line=" 1" >
+  <Project>
+    <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_file>
+    <file_marker column=" 66" line=" 40" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression_juste.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 3" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression_juste.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 3" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression_juste.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 3" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
+      <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression_juste.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 8" line=" 3" >
       <vfs_project>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\default.gpr</vfs_project>
       <vfs_file>C:\Users\Nath\Documents\GitHub\projet-SN\livrable\src\decompression\src\decompression.adb</vfs_file>
     </file_marker>

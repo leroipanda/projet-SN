@@ -1,0 +1,8 @@
+decompression.adb:3:08: keyword "BODY" expected here [see file name]
+decompression.adb:32:07: statement not allowed in declarative part
+decompression.adb:45:21: "=" should be ":="
+decompression.adb:47:22: "=" should be ":="
+decompression.adb:54:33: missing ";"
+decompression.adb:57:33: missing ";"
+decompression.adb:66:07: missing ";"
+decompression.adb:147:19: missing "END P_integer_file;"

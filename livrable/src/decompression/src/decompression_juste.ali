@@ -1,0 +1,135 @@
+V "GNAT Lib v2018"
+M P W=b
+A -O2
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U decompression_juste%b	decompression_juste.adb	6e40a650 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+Z ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+W ada.sequential_io%s
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+Z interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+W system%s		system.ads		system.ali
+Z system.byte_swapping%s  s-bytswa.ads		s-bytswa.ali
+Z system.crtl%s		s-crtl.ads		s-crtl.ali
+Z system.file_control_block%s  s-ficobl.ads	s-ficobl.ali
+Z system.file_io%s	s-fileio.adb		s-fileio.ali
+Z system.img_char%s	s-imgcha.adb		s-imgcha.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.sequential_io%s  s-sequio.adb		s-sequio.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D ada.ads		20180524051736 76789da1 ada%s
+D a-except.ads		20180524051736 291912d5 ada.exceptions%s
+D a-ioexce.ads		20180524051736 e4a01f64 ada.io_exceptions%s
+D a-sequio.ads		20180524051736 3573d8ce ada.sequential_io%s
+D a-sequio.adb		20180524051738 93d6700a ada.sequential_io%b
+D a-stream.ads		20180524051736 119b8fb3 ada.streams%s
+D a-tags.ads		20180524051738 491b781d ada.tags%s
+D a-textio.ads		20180524051738 881db35a ada.text_io%s
+D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
+D decompression_juste.adb  20181212222928 d32ecdc4 decompression_juste%b
+D interfac.ads		20180524051736 5ab55268 interfaces%s
+D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
+D system.ads		20180524051738 32a08138 system%s
+D s-bytswa.ads		20180524051736 799c7440 system.byte_swapping%s
+D s-crtl.ads		20180524051736 0ebbdb71 system.crtl%s
+D s-exctab.ads		20180524051738 54135002 system.exception_table%s
+D s-ficobl.ads		20180524051738 078245e4 system.file_control_block%s
+D s-fileio.ads		20180524051736 45ce2f0f system.file_io%s
+D s-imgcha.ads		20180524051736 9c3458e7 system.img_char%s
+D s-imgint.ads		20180524051736 02dbe0c2 system.img_int%s
+D s-parame.ads		20180524051738 48ec542b system.parameters%s
+D s-secsta.ads		20180524051738 20bbe636 system.secondary_stack%s
+D s-sequio.ads		20180524051736 fc7560a7 system.sequential_io%s
+D s-soflin.ads		20180524051736 a7318a92 system.soft_links%s
+D s-stache.ads		20180524051738 a37c21ec system.stack_checking%s
+D s-stalib.ads		20180524051738 09bd3940 system.standard_library%s
+D s-stoele.ads		20180524051738 2dc34a04 system.storage_elements%s
+D s-traent.ads		20180524051736 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 10|1r7 1r25 2r6 8r34 12r22
+X 4 a-sequio.ads
+43k13*Sequential_IO 160e22 10|2w10 8r38
+53P9 File_Type<23|63P9> 10|11r29[8]
+55E9 File_Mode
+55n23 In_File{55E9[10|8]} 10|27r33[8]
+76U14 Open 10|27s20[8]
+82U14 Close 10|173s4[8]
+99U14 Read 10|47s17[8] 89s13[8] 149s17[8]
+102V13 End_Of_File{boolean} 10|144s32[8]
+X 8 a-textio.ads
+49K13*Text_IO 471e16 10|1w11 1r29 12r26
+52P9*File_Type 10|12r34
+53n32*Out_File{53E9} 10|142r30
+86U14*Create 10|142s7
+98U14*Close 10|174s4
+207U14*Put 10|159s16
+242U14*Put 10|56s13
+263U14*Put_Line 10|86s9 90s13 117s21
+X 10 decompression_juste.adb
+5U11*Decompression_juste 5b11 176l5 176t24
+7M9 T_bit 8r52 43r25 67r20 136r18
+8K12 P_integer_file[4|43] 9r8 11r14 27r5 144r17
+11p4 Fichier{4|53P9[8]} 27m25 27r25 47r22 89r18 144r44 149r22 173m10 173r10
+12p4 nouveau_Fichier{8|52P9} 142m14 142r14 159r20 174m11 174r11
+13i4 Taille_table{integer} 20r31 31r21
+14i4 Taille_octet{integer} 21r29 30r16
+15i4 Taille_texte_encode{integer} 76r36
+16i5 Taille_arbre_encode{integer} 79r36
+17e5 cara_test{character} 33r28 156r51
+19a4 nom{string} 142r39
+20A9 T_Tableau(character)<integer> 21r46 65r24
+21A9 T_Table(20A9)<integer> 23r13
+23a5 Table{21A9} 33m13 116m21 156r16 159r36
+30i8 i{integer} 33r19
+31i13 j{integer} 33r22
+41V18 lire_octet{integer} 41b18 41>29 58l13 58t23 76s25 79s25 83s46
+41i29 nombre{integer} 46r25
+42i13 valeur{integer} 50m21 50r31 52m21 52r31 56r31 57r20
+43m13 valeur_lu{7M9} 47m30 49r28
+46i17 i{integer}
+60E15 cote 60e38 70r26
+60n24 Droite{60E15} 93r39 99r37
+60n31 Gauche{60E15} 70r34 95r39
+61i9 nb_caractere{integer}
+62i9 caractere_traduit{integer} 88r15 115m21 115r42 116r61 117r60
+63i9 taille_texte{integer} 76m9
+64i9 taille_arbre{integer} 79m9 82r21 88r36
+65a9 tableau_cara{20A9} 83m13 116r48 117r47
+66i9 valeur{integer} 90r101 100m21 100r31 103m21 103r31 108m17 108r27 116r35
+. 117r104
+67m9 valeur_lu{7M9} 89m26 90r58 91r24
+68b9 memoire{boolean} 92r20 109r20 118m21
+69i9 taille{integer} 98m17 98r26 107m17 107r26 116r27
+70e9 position_arbre{60E15} 93m21 95m21 99r20
+82i13 i{integer} 83r26
+133i7 valeurHuffman{integer} 147m10 151m21 151r38 153m21 153r38 156r30 159r50
+134i7 taille{integer} 146m10 156r22 159r42 162m10 162r20
+135b7 convertie{boolean} 145m10 148r20 160m16
+136m7 inte_lu{7M9} 149m31 150r30
+X 23 s-sequio.ads
+63P9*File_Type(43R9)
+

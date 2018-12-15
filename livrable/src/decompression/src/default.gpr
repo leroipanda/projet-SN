@@ -1,6 +1,6 @@
 project Default is
 
-   for Main use ("decompression.adb");
+   for Main use ("decompression.adb", "decompression_juste.adb");
 
    package Compiler is
       for Switches ("ada") use ("-g", "-O2");
