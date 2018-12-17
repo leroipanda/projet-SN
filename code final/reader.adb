@@ -19,7 +19,7 @@ package body reader is
 
     procedure Open_Compressed_File is
     begin
-	open(file_compressed, In_File, "./" & file_name);
+	open(file_compressed, In_File, file_name);
     end;
 
 
@@ -27,7 +27,8 @@ package body reader is
     procedure Read_Octet is
 	octet : T_Byte;
     begin
-	Bin_IO.Read(file_compressed, octet);
+      Bin_IO.Read(file_compressed, octet);
+      --Put_Line(integer'Image(Integer(octet)));
 	Update_Buffer(octet);
     end;
 
@@ -35,12 +36,11 @@ package body reader is
     function Read_Bit return Integer is
 	bit : Integer;
     begin
-	if buffer = 0 then
-	    Read_Octet;
-	end if;
+
 	bit := Integer(buffer) / 2**7;
 	buffer := buffer - T_Byte(bit*2**7);
-	buffer := buffer * 2;
+        buffer := buffer * 2;
+        --Put_Line(integer'Image(bit));
 	return bit;
     end;
 
@@ -64,14 +64,16 @@ package body reader is
 
 
     function Read_Text_Size return Integer is
-	power : Integer := 31;
+
 	bit, Text_Size : Integer := 0;
     begin
-	for i in 1..4 loop
+      for i in 1..4 loop
+         Read_Octet;
 	    for k in 1..8 loop
-		bit := Read_Bit;
-		Text_Size := Text_Size + bit**power;
-		power := power - 1;
+            bit := Read_Bit;
+
+		Text_Size := Text_Size *2+ bit;
+
 	    end loop;
 	end loop;
 	return Text_Size;
@@ -86,8 +88,8 @@ package body reader is
 	Read_Octet;
 	for k in 1..8 loop
 	    Bit := Read_Bit;
-	    Tab_Huffman_Size := Tab_Huffman_Size + bit*2**power;
-	    power := power - 1;
+	    Tab_Huffman_Size := Tab_Huffman_Size*2 + bit;
+
 	end loop;
 	return Tab_Huffman_Size;
     end;

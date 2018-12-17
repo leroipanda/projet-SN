@@ -17,7 +17,7 @@ begin
 	end if;
     end if;
 
-
+   Compress("nouveau_texte.txt");
     Uncompress("nouveau_texte.txt.hf");
 
 

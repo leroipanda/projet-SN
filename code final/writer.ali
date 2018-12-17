@@ -1,0 +1,143 @@
+V "GNAT Lib v2018"
+A -O2
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U writer%b		writer.adb		a266d509 NE OO PK GE IL
+W ada%s			ada.ads			ada.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+W ada.sequential_io%s
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+Z interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+W system%s		system.ads		system.ali
+Z system.byte_swapping%s  s-bytswa.ads		s-bytswa.ali
+Z system.crtl%s		s-crtl.ads		s-crtl.ali
+Z system.file_control_block%s  s-ficobl.ads	s-ficobl.ali
+Z system.file_io%s	s-fileio.adb		s-fileio.ali
+Z system.sequential_io%s  s-sequio.adb		s-sequio.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+U writer%s		writer.ads		b4b460e1 BN EE NE OO PK GE IL
+
+D ada.ads		20180524051736 76789da1 ada%s
+D a-calend.ads		20180524051738 372815c8 ada.calendar%s
+D a-charac.ads		20180524051736 2d3ec45b ada.characters%s
+D a-chlat1.ads		20180524051736 66457d31 ada.characters.latin_1%s
+D a-direct.ads		20180524051736 078228da ada.directories%s
+D a-except.ads		20180524051736 291912d5 ada.exceptions%s
+D a-finali.ads		20180524051738 bf4f806b ada.finalization%s
+D a-inteio.ads		20180524051738 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20180524051736 e4a01f64 ada.io_exceptions%s
+D a-sequio.ads		20180524051736 3573d8ce ada.sequential_io%s
+D a-sequio.adb		20180524051738 93d6700a ada.sequential_io%b
+D a-stream.ads		20180524051736 119b8fb3 ada.streams%s
+D a-string.ads		20180524051736 90ac6797 ada.strings%s
+D a-strmap.ads		20180524051736 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20180524051738 8098c91f ada.strings.unbounded%s
+D a-tags.ads		20180524051738 491b781d ada.tags%s
+D a-textio.ads		20180524051738 881db35a ada.text_io%s
+D a-tiinio.ads		20180524051736 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20180524051736 5ab55268 interfaces%s
+D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
+D system.ads		20180524051738 32a08138 system%s
+D s-atocou.ads		20180524051738 b45c2d8d system.atomic_counters%s
+D s-bytswa.ads		20180524051736 799c7440 system.byte_swapping%s
+D s-crtl.ads		20180524051736 0ebbdb71 system.crtl%s
+D s-exctab.ads		20180524051738 54135002 system.exception_table%s
+D s-ficobl.ads		20180524051738 078245e4 system.file_control_block%s
+D s-fileio.ads		20180524051736 45ce2f0f system.file_io%s
+D s-finmas.ads		20180524051738 7811a767 system.finalization_masters%s
+D s-finroo.ads		20180524051738 4ff27390 system.finalization_root%s
+D s-parame.ads		20180524051738 48ec542b system.parameters%s
+D s-secsta.ads		20180524051738 20bbe636 system.secondary_stack%s
+D s-sequio.ads		20180524051736 fc7560a7 system.sequential_io%s
+D s-soflin.ads		20180524051736 a7318a92 system.soft_links%s
+D s-stache.ads		20180524051738 a37c21ec system.stack_checking%s
+D s-stalib.ads		20180524051738 09bd3940 system.standard_library%s
+D s-stoele.ads		20180524051738 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20180524051736 b16154c2 system.storage_pools%s
+D s-stposu.ads		20180524051736 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20180524051736 aedef97e system.stream_attributes%s
+D s-traent.ads		20180524051736 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
+D writer.ads		20181214175946 b4b460e1 writer%s
+D writer.adb		20181213143122 5a757f02 writer%b
+X 1 ada.ads
+16K9*Ada 20e8 45|1r6 2r6 2r23 3r6 3r31 4r6 4r27 9r17
+X 5 a-direct.ads
+76K13*Directories 502e20 45|4w10 4r31
+307I9*File_Size<long_long_integer> 45|19r34
+321V13*Size{307I9} 45|19s44
+X 8 a-inteio.ads
+18K13*Integer_Text_IO[18|46] 45|3w10 3r35
+X 10 a-sequio.ads
+43k13*Sequential_IO 160e22 45|1w10 9r21
+53P9 File_Type<33|63P9> 45|13r30[8]
+55E9 File_Mode
+55n32 Out_File{55E9[45|8]} 45|17r33[8]
+70U14 Create 45|17s9[8]
+82U14 Close 45|91s9[8]
+100U14 Write 45|30s20[8] 45s16[8] 105s16[8]
+X 17 a-textio.ads
+49K13*Text_IO 471e16 45|2w10 2r27
+X 33 s-sequio.ads
+63P9*File_Type(43R9)
+X 44 writer.ads
+3a5 file_name{string} 45|17r50 19r56
+5k9*writer 3z5 31E5 41l5 41e11 45|6b14 120l5 120t11
+7M10*T_Size_Text 32r17 45|19r22 24r21
+8M10*T_Byte 10r16 45|9r35 23r28 29r33 38r22 45r39 66r42 70r38 111r24
+9R10*T_Code 12e15 17r36 31r14 34r39 45|35r16 49r36 50r16 95r39
+10m9 byte{8M10} 45|38m14 65m20 65r35 66m20 66r35 66r62 70m18 70r31 70r59
+. 71m20 71r33 81m20 81r35 97m16 97r31 98m16 98r31 98r43 105r46 111m16
+11i9 length{integer} 45|37m14 53r19 53r33 59r22 59r36 63r22 63r36 65r55 66r81
+. 67m18 67r33 67r54 70r78 70r106 72m20 72r35 80r19 81r57 97r46 99m16 99r33
+. 99r47 112m16
+15U15*Create_Compressed_File 45|15b15 20t8
+17U15*Write_Byte 17>26 45|39s9 49b15 75t8
+17r26 code{9R10} 45|49b26 53r28 55r27 59r31 61r27 63r31 65r50 66r57 66r76
+. 67r28 70r26 70r54 70r73 70r101
+19U15*Write_Bit 19>25 45|34b15 40t8
+19i25 i{integer} 45|34b25 38r29
+21U15*Write_Integer 21>29 45|43b15 46t8
+21i29 i{integer} 45|43b29 45r46
+23U15*Write_Text_Size 45|22b15 32t8
+25U15*Force_Write_Buffer 45|78b15 85t8
+27U15*Close_Compressed_File 45|89b15 92t8
+31r5 buffer{9R10} 45|53r12 59r15 63r15 65m13 65r28 66m13 66r28 67r47 71m13
+. 72m13 80r12 81m13 81r28 81r50 97m9 97r24 98m9 98r24 99m9 99r26 105r39 111m9
+. 112m9
+32m5 text_size{7M10} 45|19m9 27r27 28m13 28r26
+34U15 Update_Buffer 34>29 45|55s13 61s13 95b15 100t8
+34r29 code{9R10} 45|95b29 97r41 98r38 99r42
+36U15 Clean_Buffer 45|18s9 57s13 69s13 83s13 109b15 113t8
+38U15 Write_Buffer 45|56s13 68s13 82s13 103b15 106t8
+X 45 writer.adb
+8K13 Bin_IO[10|43] 10r9 13r23 30r13 45r9 105r9
+13p5 file_compressed{10|53P9[8]} 17m16 17r16 30r26 45r22 91m15 91r15 105r22
+23m9 buffer_text_size{44|8M10} 29m13 30r43
+24m9 long_byte{44|7M10} 27m13 28r38 29r40
+26i13 i{integer} 27r46 27r59 29r57
+35r9 code{44|9R10} 37m9 38m9 39r20
+50r9 rest{44|9R10} 67m13 70m13 71r28 72r30
+

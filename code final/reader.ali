@@ -1,0 +1,139 @@
+V "GNAT Lib v2018"
+A -O2
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U reader%b		reader.adb		8d7d0907 NE OO PK GE IL
+W ada%s			ada.ads			ada.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+W ada.sequential_io%s
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.modular_aux%s  a-timoau.adb	a-timoau.ali
+Z ada.text_io.modular_io%s
+Z ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+Z interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+W system%s		system.ads		system.ali
+Z system.byte_swapping%s  s-bytswa.ads		s-bytswa.ali
+Z system.crtl%s		s-crtl.ads		s-crtl.ali
+Z system.file_control_block%s  s-ficobl.ads	s-ficobl.ali
+Z system.file_io%s	s-fileio.adb		s-fileio.ali
+Z system.sequential_io%s  s-sequio.adb		s-sequio.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+U reader%s		reader.ads		cecebc35 BN EE NE OO PK GE IL
+
+D ada.ads		20180524051736 76789da1 ada%s
+D a-calend.ads		20180524051738 372815c8 ada.calendar%s
+D a-charac.ads		20180524051736 2d3ec45b ada.characters%s
+D a-chlat1.ads		20180524051736 66457d31 ada.characters.latin_1%s
+D a-direct.ads		20180524051736 078228da ada.directories%s
+D a-except.ads		20180524051736 291912d5 ada.exceptions%s
+D a-finali.ads		20180524051738 bf4f806b ada.finalization%s
+D a-inteio.ads		20180524051738 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20180524051736 e4a01f64 ada.io_exceptions%s
+D a-sequio.ads		20180524051736 3573d8ce ada.sequential_io%s
+D a-sequio.adb		20180524051738 93d6700a ada.sequential_io%b
+D a-stream.ads		20180524051736 119b8fb3 ada.streams%s
+D a-string.ads		20180524051736 90ac6797 ada.strings%s
+D a-strmap.ads		20180524051736 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20180524051738 8098c91f ada.strings.unbounded%s
+D a-tags.ads		20180524051738 491b781d ada.tags%s
+D a-textio.ads		20180524051738 881db35a ada.text_io%s
+D a-tiinio.ads		20180524051736 aa04e5d6 ada.text_io.integer_io%s
+D a-timoau.ads		20180524051738 01c06610 ada.text_io.modular_aux%s
+D a-timoio.ads		20180524051736 d32407b9 ada.text_io.modular_io%s
+D a-timoio.adb		20180524051738 de0ea1c6 ada.text_io.modular_io%b
+D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20180524051736 5ab55268 interfaces%s
+D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
+D reader.ads		20181215185724 cecebc35 reader%s
+D reader.adb		20181216234802 0f147fd8 reader%b
+D system.ads		20180524051738 32a08138 system%s
+D s-atocou.ads		20180524051738 b45c2d8d system.atomic_counters%s
+D s-bytswa.ads		20180524051736 799c7440 system.byte_swapping%s
+D s-crtl.ads		20180524051736 0ebbdb71 system.crtl%s
+D s-exctab.ads		20180524051738 54135002 system.exception_table%s
+D s-ficobl.ads		20180524051738 078245e4 system.file_control_block%s
+D s-fileio.ads		20180524051736 45ce2f0f system.file_io%s
+D s-finmas.ads		20180524051738 7811a767 system.finalization_masters%s
+D s-finroo.ads		20180524051738 4ff27390 system.finalization_root%s
+D s-parame.ads		20180524051738 48ec542b system.parameters%s
+D s-secsta.ads		20180524051738 20bbe636 system.secondary_stack%s
+D s-sequio.ads		20180524051736 fc7560a7 system.sequential_io%s
+D s-soflin.ads		20180524051736 a7318a92 system.soft_links%s
+D s-stache.ads		20180524051738 a37c21ec system.stack_checking%s
+D s-stalib.ads		20180524051738 09bd3940 system.standard_library%s
+D s-stoele.ads		20180524051738 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20180524051736 b16154c2 system.storage_pools%s
+D s-stposu.ads		20180524051736 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20180524051736 aedef97e system.stream_attributes%s
+D s-traent.ads		20180524051736 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 26|1r6 2r6 2r23 3r6 3r31 4r6 4r27 11r17 15r17
+X 5 a-direct.ads
+76K13*Directories 502e20 26|4w10 4r31
+X 8 a-inteio.ads
+18K13*Integer_Text_IO[18|46] 26|3w10 3r35
+X 10 a-sequio.ads
+43k13*Sequential_IO 160e22 26|1w10 11r21
+53P9 File_Type<38|63P9> 26|18r30[10]
+55E9 File_Mode
+55n23 In_File{55E9[26|10]} 26|22r31[10]
+76U14 Open 26|22s9[10]
+99U14 Read 26|30s14[10]
+X 17 a-textio.ads
+49K13*Text_IO 471e16 26|2w10 2r27 15r21
+X 20 a-timoio.ads
+46k21*Modular_IO 85e27 26|15r29
+X 25 reader.ads
+3a5 file_name{string} 26|22r40
+5k9*reader 3z5 48E5 54l5 54e11 26|7b14 98t4
+7M9*T_Byte 42r32 48r14 50r40 26|11r35 15r40 28r17 41r28 48r37 59r32
+12U14*Open_Compressed_File 26|20b15 23t8
+17V13*Read_Text_Size{integer} 26|66b14 80t8
+23V14*Read_Tab_Huffman_Size{integer} 26|84b14 95t8
+29U15*Read_Octet 26|27b15 33t8 71s10 88s9
+35V13*Read_Bit{integer} 26|36b14 45t8 73s20 90s20
+42V14*Get_Buffer{7M9} 26|59b14 62t8
+48m5 buffer{7M9} 26|40r24 41m9 41r19 42m9 42r19 50m9 56m9 61r16
+50U15 Update_Buffer 50>29 26|32s9 48b15 51t8
+50m29 octet{7M9} 26|48b29 50r19
+52U15 Clean_Buffer 26|54b15 57t8
+X 26 reader.adb
+10K13 Bin_IO[10|43] 12r9 18r23 30r7
+14K13 Mod_IO[20|46] 16r9
+18p5 file_compressed{10|53P9[10]} 22m14 22r14 30r19
+28m9 octet{25|7M9} 30m36 32r23
+37i9 bit{integer} 40m9 41r35 44r16
+68i9 bit{integer} 73m13 75r44
+68i14 Text_Size{integer} 75m17 75r30 79r16
+70i11 i{integer}
+72i17 k{integer}
+85i9 Tab_Huffman_Size{integer} 91m13 91r33 94r16
+85i27 bit{integer} 90m13 91r54
+86i9 power{integer}
+89i13 k{integer}
+X 38 s-sequio.ads
+63P9*File_Type(43R9)
+

@@ -367,41 +367,21 @@ package body huffman is
 
 
 
-    procedure Uncompress(file_name : in String) is
 
-	package Reader_Uncompress is
+
+
+
+   procedure Uncompress(file_name : String) is
+
+      package Reader_Uncompress is
 		new reader(file_name);
 	use Reader_Uncompress;
 
-    begin
-
-	-- Text_Size
-
-	-- Tab_Size
-	-- {tableau créé}
-
-	-- Ajout des caractères dans le tableau
-
-	-- Ajout du code des caractères dans la tableau
-
-	-- Décriptage + écrit dans le ficher .txt
-
-
-	null;
-
-    end;
 
 
 
-    procedure Decompression_juste(file_name : String) is
 
-	PACKAGE P_integer_file IS NEW Ada.Sequential_IO(T_bit) ;
-	USE P_integer_file ;
-
-
-
-	Fichier : P_integer_file.File_type ;
-	nouveau_Fichier : Ada.Text_IO.File_Type;
+	nouveau_Fichier : Ada.Text_IO.File_Type ;
 	Taille_table :constant Integer := 257;
 	Taille_octet :constant Integer := 8;
 	Taille_texte_encode :constant Integer :=4;
@@ -409,15 +389,18 @@ package body huffman is
 	cara_test :constant Character :='@' ;
 	taille_texte : integer;
 	taille_arbre : integer;
-	nom : String := "test1.txt";
+      nom : String := file_name & ".txt";
+      position_bit : Integer := 0 ;
 	Type T_Tableau is array(1..Taille_table) of Character ;
 	Type T_Table is array(1..Taille_octet) of T_Tableau;
 
 	Table : T_Table;
 
     begin
-	--ouverture et lecture du contenus du fichier( in : string nomfichier, out : File_type fichier)
-	P_integer_file.open(Fichier,In_File, "jerome.txt.hf") ;
+      --ouverture et lecture du contenus du fichier( in : string nomfichier, out : File_type fichier)
+      Open_Compressed_File;
+
+
 
 	--on itialise la table
 	for i in 1..Taille_octet loop
@@ -430,56 +413,66 @@ package body huffman is
 
 	--extraction de la table ( in fichier, out tableau de tableau charactere table)
 
-	declare
-	    function lire_octet(nombre :in integer) return integer is
-		valeur :integer:=0;
-		valeur_lu : T_bit;
-	    begin
-
-		for i in 1..nombre*8 loop
-		    read(Fichier,valeur_lu);
-
-		    if Integer(valeur_lu) = 1 then
-			valeur := valeur*2 + 1;
-		    else
-			valeur := valeur*2 ;
-		    end if;
-
-		end loop;
-		--  put(integer'Image(valeur));
+      declare
+            --fonction lit la valeur de nombre octet rentre en parametre
+	    function lire_octets(nombre :in integer) return integer is
+            valeur : Integer ;
+         begin
+            for i in 1..nombre loop
+               Read_Octet;
+               valeur := Integer(Get_Buffer);
+            end loop ;
 		return valeur;
-	    end lire_octet;
+	    end lire_octets;
+
+         --
+
 
 	    type position is (Droite,Gauche,noeuds);
 	    nb_caractere : Integer:=0;
 	    caractere_traduit : Integer:=0;
 	    tableau_cara : T_Tableau;
 	    valeur : integer:=0;
-	    valeur_lu :T_bit;
+	    valeur_lu :Integer;
 	    memoire :boolean := False;
 	    taille : integer :=0;
-	    position_arbre : position := Droite;
+         position_arbre : position := Droite;
+         position_bit : Integer := 0 ;
 
 
 
 	begin
 	    --lecture de la taille texte
-	    taille_texte := lire_octet(Taille_texte_encode);
+	    taille_texte := Read_Text_Size;
 
 	    --lecture de taille arbre
-	    taille_arbre := lire_octet(Taille_arbre_encode);
+	    taille_arbre := Read_Tab_Huffman_Size;
 	    --lecture des caractere
+         Put_Line(Integer'Image(taille_texte));
+         Put_Line(Integer'Image(taille_arbre));
 
-	    for i in 1..taille_arbre loop
-		tableau_cara(i) := Character'Val(lire_octet(1));
+
+         for i in 1..taille_arbre loop
+
+            tableau_cara(i) := Character'Val(lire_octets(1));
+
 	    end loop;
 	    --
-	    --put_line("lecture parcour");
-	    --on lit le parcour de l'arbre
-	    while caractere_traduit /= taille_arbre loop
-		read(Fichier,valeur_lu);
-		-- put_line("bit lu : " & integer'Image(integer(valeur_lu)) & " valeur : " & integer'Image(valeur));
-		if integer(valeur_lu) = 0 then
+	    put_line("lecture du parcoure");
+         --on lit le parcour de l'arbre
+         Read_Octet;
+         while caractere_traduit /= taille_arbre loop
+
+            if position_bit = 8 then
+               Read_Octet;
+               position_bit:= 0 ;
+            end if;
+            position_bit := position_bit +1 ;
+            valeur_lu := Integer(Read_Bit);
+            Put_Line(Integer'Image(position_bit));
+            --put_line("bit lu : " & integer'Image(integer(valeur_lu)) & " valeur : " & integer'Image(valeur));
+
+		if valeur_lu = 0 then
 		    if position_arbre = noeuds then
 			position_arbre := gauche;
 		    end if;
@@ -509,19 +502,22 @@ package body huffman is
 		    end if;
 		    taille := taille -1;
 		    valeur := valeur / 2 ;
-		end if;
+            end if;
+
 	    end loop ;
 
 
-	end;
+      end;
+
+
 	--affichage de la table
-	--for i in 1..Taille_octet loop
-	--for j in 1..Taille_table loop
-	--if table(i)(j) /= '@' then
-	--put_line("taille : " & integer'Image(i) & " valeur : " & integer'Image(j) &" "& character'Image(table(i)(j) ));
-	--     end if;
-	--end loop;
-	--end loop;
+	for i in 1..Taille_octet loop
+	for j in 1..Taille_table loop
+	if table(i)(j) /= '@' then
+	put_line("taille : " & integer'Image(i) & " valeur : " & integer'Image(j-1) &" "& character'Image(table(i)(j) ));
+	     end if;
+	end loop;
+	end loop;
 
 
 
@@ -531,51 +527,61 @@ package body huffman is
 	declare
 
 	    valeurHuffman : Integer;
-	    taille : Integer:=1;
+	    taille : Integer:=8;
 	    taille_texte_lu:integer :=0;
 	    convertie : Boolean;
-	    inte_lu :  T_bit ;
+	    inte_lu :  Integer ;
 
 
-	begin
-	    --on passe un ligne du fichier
+      begin
 
-	    create(nouveau_Fichier,Out_File,nom) ;
+         --on passe un ligne du fichier
+         Put_Line("debut traduction");
+         create(nouveau_Fichier,Out_File,nom) ;
+         Put_Line(Integer'Image(position_bit));
 
-	    while not   P_integer_file.End_of_file(Fichier) loop
-		--  while taille_texte_lu < taille_texte loop
-		convertie := false;
-		taille := 1;
-		valeurHuffman :=0;
-		while not convertie loop
-		    read(fichier, inte_lu);
-		    if Integer(inte_lu )= 1 then
-			valeurHuffman := valeurHuffman *2   +1 ;
-		    else
-			valeurHuffman := valeurHuffman *2   ;
-		    end if;
-		    --put_line("bit lu : " & integer'Image(integer(inte_lu)) & " valeur : " & integer'Image(valeurHuffman));
-		    if Table(taille)(valeurHuffman+1) /=  cara_test  then
-			--Put_Line("---entree---");
-			--Put_Line(Character'Image(Table(taille)(valeurHuffman+1)));
-			Put(nouveau_Fichier,Table(taille)(valeurHuffman+1));
-			convertie := True;
-		    end if;
-		    taille := taille+1;
 
-		end loop;
-		taille_texte_lu := taille_texte_lu + taille -1;
-		--put_line(integer'image(taille_texte_lu));
 
-	    end loop;
+         while taille_texte_lu < taille_texte loop
+            convertie := false;
+            taille := 1;
+            valeurHuffman :=0;
+            while not convertie loop
+
+               if position_bit = 8 then
+                  Read_Octet;
+                  position_bit:= 0 ;
+               end if;
+               position_bit := position_bit +1 ;
+
+               inte_lu := Read_Bit;
+               if inte_lu = 1 then
+                  valeurHuffman := valeurHuffman *2   +1 ;
+               else
+                  valeurHuffman := valeurHuffman *2   ;
+               end if;
+               put_line("bit lu : " & integer'Image(integer(inte_lu)) & " valeur : " & integer'Image(valeurHuffman));
+               if Table(taille)(valeurHuffman+1) /=  cara_test  then
+                  Put_Line("---entree---");
+                  Put_Line(Character'Image(Table(taille)(valeurHuffman+1)));
+                  Put(nouveau_Fichier,Table(taille)(valeurHuffman+1));
+                  convertie := True;
+               end if;
+               taille := taille+1;
+
+            end loop;
+            taille_texte_lu := taille_texte_lu +1;
+            --put_line(integer'image(taille_texte_lu));
+
+         end loop;
 
 
 	end;
 
-	close(Fichier);
+
 	close (nouveau_Fichier);
 
-    end Decompression_juste;
+    end Uncompress;
 
 
 

@@ -70,4 +70,4 @@ begin
 	close(file);
 
 
-end IO_Binaire;
+end IO_Binaire_Bit;

@@ -1,0 +1,11 @@
+project Default is
+
+   package Compiler is
+      for Switches ("ada") use ("-g", "-O2");
+   end Compiler;
+
+   for Main use ("exemple_tableaux.adb", "huffman.adb", "huffman.ads", "IO_Binaire_Bit.adb", "IO_Binaire_Byte.adb", "IO_Texte.adb", "main.adb", "reader.adb", "reader.ads", "tableaux.adb", "tableaux.ads", "test_tableaux.adb", "tree.adb", "tree.ads", 
+      "writer.adb", "writer.ads");
+
+end Default;
+

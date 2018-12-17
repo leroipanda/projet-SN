@@ -1,0 +1,117 @@
+V "GNAT Lib v2018"
+A -O2
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV NO_RECURSION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U tableaux%b		tableaux.adb		67f08ba1 NE OO PK GE IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+U tableaux%s		tableaux.ads		648ea6c5 BN EE NE OO PK GE IL
+
+D ada.ads		20180524051736 76789da1 ada%s
+D a-except.ads		20180524051736 291912d5 ada.exceptions%s
+D a-ioexce.ads		20180524051736 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20180524051736 119b8fb3 ada.streams%s
+D a-tags.ads		20180524051738 491b781d ada.tags%s
+D a-textio.ads		20180524051738 881db35a ada.text_io%s
+D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20180524051736 5ab55268 interfaces%s
+D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
+D system.ads		20180524051738 32a08138 system%s
+D s-crtl.ads		20180524051736 0ebbdb71 system.crtl%s
+D s-exctab.ads		20180524051738 54135002 system.exception_table%s
+D s-ficobl.ads		20180524051738 078245e4 system.file_control_block%s
+D s-parame.ads		20180524051738 48ec542b system.parameters%s
+D s-secsta.ads		20180524051738 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20180524051736 a7318a92 system.soft_links%s
+D s-stache.ads		20180524051738 a37c21ec system.stack_checking%s
+D s-stalib.ads		20180524051738 09bd3940 system.standard_library%s
+D s-stoele.ads		20180524051738 2dc34a04 system.storage_elements%s
+D s-traent.ads		20180524051736 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
+D tableaux.ads		20181206151614 648ea6c5 tableaux%s
+D tableaux.adb		20181206151700 8b639e3e tableaux%b
+X 1 ada.ads
+16K9*Ada 20e8 24|3r6 4r5
+X 6 a-textio.ads
+49K13*Text_IO 471e16 24|3w10 4r9
+X 23 tableaux.ads
+5+10 T_Element 47r73 64r81 81r56 98r55 117r77 151r64 181r38 186r50 24|18r73
+. 23r81 28r56 34r55 47r77 64r64 77r13
+6i5 Capacity{integer} 82r40 118r86 186r37
+8k9*tableaux 5z10 6z5 186E10 192l5 192e13 24|6b14 110l5 110t13
+10R10*T_Tableau 20r40 32r35 47r38 64r43 81r35 98r35 117r39 134r39 151r43
+. 165r37 182r33 187c10 190e15 24|8r40 13r36 18r38 23r43 28r35 34r35 47r39
+. 56r39 64r43 76r37 84r33 86r38
+20U15*Initialize 20<26 24|8b15 11t8
+20r26 Tableau{10R10} 21r30 24|8b26 10m9
+32V14*Get_Size{integer} 21s21 32>23 48s44 65s44 82s20 83s42 99s20 118s44
+. 118s66 119s63 119s84 135s44 136s21 136s41 152s20 166s36 166s70 24|13b14
+. 16t8 106s23
+32r23 Tableau{10R10} 24|13b23 15r16
+47V14*Get_Element{5+10} 47>26 47>49 66s21 83s21 119s21 24|18b14 21t8 39s16
+. 50s39 59s37 68s16 79s14 80s29 94s32 94s53
+47r26 Tableau{10R10} 48r53 24|18b26 20r16
+47i49 Index{integer} 48r20 48r35 24|18b49 20r33
+64U15*Set_Element 64=27 64>54 64>71 24|23b15 26t8 50s13 52s9 59s13 80s9 81s9
+64r27 Tableau{10R10} 65r53 66r33 24|23b27 25m9
+64i54 Index{integer} 65r20 65r35 66r42 24|23b54 25r26
+64*71 Element{5+10} 66r51 24|23b71 25r36
+81U15*Add 81=19 81>46 24|28b15 32t8
+81r19 Tableau{10R10} 82r29 83r33 83r51 24|28b19 30m9 30r26 31m9 31r25
+81*46 Element{5+10} 83r63 24|28b46 30r47
+98V14*Contains{boolean} 98>23 98>46 153s25 24|34b14 45t8
+98r23 Tableau{10R10} 99r29 24|34b23 38r39 39r28
+98*46 Element{5+10} 24|34b46 39r42
+117U15*Insert 117=22 117>50 117>67 24|47b15 54t8
+117r22 Tableau{10R10} 118r53 118r75 119r33 119r72 119r93 24|47b22 49r35 50m25
+. 50r51 52m21 53m9 53r25
+117i50 Index{integer} 118r20 118r35 119r42 24|47b50 49r26 52r30
+117*67 Element{5+10} 119r51 24|47b67 52r37
+134U15*Delete 134=22 134>50 24|56b15 62t8 69s17
+134r22 Tableau{10R10} 135r53 136r30 136r50 24|56b22 58r28 59m25 59r49 61m9
+. 61r25
+134i50 Index{integer} 135r20 135r35 24|56b50 58r18
+151U15*Delete_All 151=26 151>54 24|64b15 74t8
+151r26 Tableau{10R10} 152r29 153r34 24|64b26 67r20 68r28 69m24
+151*54 Element{5+10} 153r43 24|64b54 68r42
+165U15*Exchange 165=24 165>48 165>51 24|76b15 82t8 91s17 95s25 99s17
+165r24 Tab{10R10} 166r45 166r79 24|76b24 79r26 80m21 80r41 81m21
+165i48 i{integer} 166r25 166r31 24|76b48 80r46 81r26
+165i51 j{integer} 166r59 166r65 24|76b51 79r31 80r26
+181V23 Compare{boolean} 181>31 181>34 24|94s24
+181*31 a{5+10}
+181*34 b{5+10}
+182u15*Sort 182=20 24|84b15 107t8
+182r20 Tab{10R10} 24|84b20 106m15 106r32
+186A10 T_Tab_Element(5+10)<integer> 189r20
+188i9 Size{integer} 24|10m17 15r24 30r34 31m17 31r33 38r47 49r43 53m17 53r33
+. 58r36 61m17 61r33 67r28
+189a9 Elements{186A10} 24|20r24 25m17 30m17
+X 24 tableaux.adb
+35b9 Trouve{boolean} 38r15 40m17 44r16
+36i9 i{integer} 38r34 39r37 42m13 42r18
+49i13 i{integer} 50r34 50r60
+58i13 i{integer} 59r34 59r58
+65i9 i{integer} 67r15 68r37 69r33 71m17 71r22
+77*9 c{23|5+10} 79m9 81r29
+86U19 Quick 86b19 86=25 86>49 86>56 101s17 102s17 104t12 106s9
+86r25 Tab{23|10R10} 91m26 94r44 94r65 95m34 99m26 101m23 102m23
+86i49 first{integer} 87r33 88r28 90r16 91r31 92r26 93r27 101r28
+86i56 last{integer} 87r41 90r24 93r39 102r39
+87i13 pivot{integer} 91r38 92m17 94r70 99r31 100m17 101r35 102r28
+88i13 j{integer} 95r42 96m25 96r30 99r38 100r26
+93i21 i{integer} 94r49 95r39
+

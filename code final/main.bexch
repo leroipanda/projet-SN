@@ -1,0 +1,24 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+C:\Users\Nath\Documents\GitHub\projet-SN\code final\default.gpr
+20181216221548
+[BOUND OBJECT FILES]
+C:\Users\Nath\Documents\GitHub\projet-SN\code final\reader.o
+C:\Users\Nath\Documents\GitHub\projet-SN\code final\tableaux.o
+C:\Users\Nath\Documents\GitHub\projet-SN\code final\tree.o
+C:\Users\Nath\Documents\GitHub\projet-SN\code final\writer.o
+C:\Users\Nath\Documents\GitHub\projet-SN\code final\huffman.o
+C:\Users\Nath\Documents\GitHub\projet-SN\code final\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LC:\Users\Nath\Documents\GitHub\projet-SN\code final\
+-LC:\Users\Nath\Documents\GitHub\projet-SN\code final\
+-LC:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000
